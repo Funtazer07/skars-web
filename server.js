@@ -29,7 +29,7 @@ const upload = multer({ storage });
 // Fake login
 const ADMIN = {
   username: 'admin',
-  password: '$2b$10$QGBIzoqQ1KHZaTkfapfAVOKid1U5Bcl3A0JZ1trC6xzSvjUlrbOdq' // password: '1234'
+  password: '1234' // password: '1234'
 };
 
 // Login route
