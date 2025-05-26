@@ -33,9 +33,9 @@ const ADMIN = {
 };
 
 // Login route
-app.post('/login', async (req, res) => {
+app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  const valid = username === ADMIN.username && await bcrypt.compare(password, ADMIN.password);
+  const valid = username === ADMIN.username && password === ADMIN.password;
   if (valid) {
     req.session.user = username;
     return res.redirect('/admin/dashboard.html');
@@ -51,3 +51,15 @@ app.post('/upload', upload.single('photo'), (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+
+// Display photos in portfolio
+const fs = require('fs');
+
+app.get('/api/photos', (req, res) => {
+  fs.readdir(path.join(__dirname, 'uploads'), (err, files) => {
+    if (err) return res.status(500).json({ error: 'Failed to read images' });
+
+    const photos = files.map(filename => `/uploads/${filename}`);
+    res.json(photos);
+  });
+});
