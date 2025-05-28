@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>SKARS PHOTOGRAPHY</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -32,6 +33,31 @@
       </button>
     </div>
   </section>
+  <section class="reviews">
+    <h1 id="black">Reviews</h1>
+    <img src="media/reviews-bg.png" alt="">
+    <div class="reviews-slider">
+      <button class="slider-button prev" aria-label="Previous slide">❮</button>
+      <div class="reviews-grid">
+        <picture class="review">
+          <img src="https://picsum.photos/600/350" alt="Review 1">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/450/350" alt="Review 2">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/200/350" alt="Review 3">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/300/350" alt="Review 4">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/300/350" alt="Review 5">
+        </picture>
+      </div>
+      <button class="slider-button next" aria-label="Next slide">❯</button>
+    </div>
+  </section>
   <section class="about">
     <div class="about-content">
     <aside class="photo">
@@ -48,21 +74,6 @@
         <a href="">See more</a>
       </button>
     </article>
-    </div>
-  </section>
-  <section class="reviews">
-          <h1 id="black">Reviews</h1>
-          <img src="media/reviews-bg.png" alt="">
-    <div class="reviews-grid">
-      <picture class="review">
-        <img src="https://picsum.photos/300/350" alt="">
-      </picture>
-      <picture class="review">
-        <img src="https://picsum.photos/300/350" alt="">
-      </picture>
-      <picture class="review">
-        <img src="https://picsum.photos/300/350" alt="">
-      </picture>
     </div>
   </section>
   <footer>
@@ -87,6 +98,7 @@
     </ul>
     <img src="media/skars_logo.png" alt="footer-logo" id="footer-logo">
   </footer>
+  <script src="js/slider.js"></script>
   <!-- <h1>Welcome to My Photography</h1>
   <a href="portfolio.html">View My Portfolio</a> -->
 </body>
