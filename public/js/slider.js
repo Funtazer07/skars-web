@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.review');
   
   let currentPosition = 0;
-  const slideWidth = slider.offsetWidth;
+  let slideWidth = slider.offsetWidth;
   let autoSlideInterval;
   const autoSlideDelay = 3000; // 5 seconds between slides
   
@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
   function stopAutoSlide() {
     if (autoSlideInterval) {
       clearInterval(autoSlideInterval);
+    }
+  }
+  
+  function updateSlideWidth() {
+    const oldSlideWidth = slideWidth;
+    slideWidth = slider.offsetWidth;
+    
+    // Adjust current position based on new slide width
+    if (oldSlideWidth !== slideWidth) {
+      const slideIndex = Math.abs(Math.round(currentPosition / oldSlideWidth));
+      currentPosition = -(slideWidth * slideIndex);
+      updateSlider();
     }
   }
   
@@ -89,18 +101,15 @@ document.addEventListener('DOMContentLoaded', function() {
   slider.addEventListener('mouseenter', stopAutoSlide);
   slider.addEventListener('mouseleave', startAutoSlide);
   
-  // Start auto-sliding
-  startAutoSlide();
-  
   // Handle window resize
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      const newSlideWidth = slider.offsetWidth;
-      const slideIndex = Math.abs(Math.round(currentPosition / slideWidth));
-      currentPosition = -(newSlideWidth * slideIndex);
-      updateSlider();
+      updateSlideWidth();
     }, 250);
   });
+  
+  // Start auto-sliding
+  startAutoSlide();
 });
