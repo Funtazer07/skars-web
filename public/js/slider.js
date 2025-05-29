@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentPosition = 0;
   let slideWidth = slider.offsetWidth;
   let autoSlideInterval;
-  const autoSlideDelay = 3000; // 5 seconds between slides
+  const autoSlideDelay = 3000; // 3 seconds between slides
   
   function updateSlider() {
     slider.style.transform = `translateX(${currentPosition}px)`;

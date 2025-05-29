@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Gallery</title>
+  <title>SKARS PORTFOLIO</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <script src="js/slider.js" defer></script>
 </head>
 <body>
-  <h1>Photo Gallery</h1>
-    <div id="gallery" class="gallery-grid"></div>
-    <script src="js/portfolio.js"></script>
+  <header>
+    <article id="header-content">
+      <a href="index.html">
+      <img src="media/skars_logo_white.png" alt="" id="logo">
+      </a>
+      <nav>
+        <a href="about.html">About me</a>
+        <a href="">Services</a>
+        <a href="portfolio.html">Pictures</a>
+        <a href="">Contact me</a>
+      </nav>
+    </article>
+  </header>
+  <section class="portfolio">
+    <h1 id="black">Portfolio</h1>
+    <!-- <img src="media/reviews-bg.png" alt=""> -->
+     <nav id="portfolio-elements">
+        <figure>
+          <a href="#" class="image-link">
+            <picture>
+              <img src="https://picsum.photos/350/300" alt="">
+            </picture>
+          </a>
+          <figcaption>
+            <a href="#">Events</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <a href="#" class="image-link">
+            <picture>
+              <img src="https://picsum.photos/350/300" alt="">
+            </picture>
+            <figcaption>
+              <a href="#">Portraits</a>
+            </figcaption>
+          </a>
+        </figure>
+        <figure>
+          <a href="#" class="image-link">
+            <picture>
+              <img src="https://picsum.photos/350/300" alt="">
+            </picture>
+          </a>
+          <figcaption>
+            <a href="#">Artistic</a>
+          </figcaption>
+        </figure>
+     </nav>
+  </section>
+  <section class="reviews">
+    <h1>Recent Work</h1>
+    <div class="reviews-slider">
+      <button class="slider-button prev" aria-label="Previous slide">❮</button>
+      <div class="reviews-grid">
+        <picture class="review">
+          <img src="https://picsum.photos/600/350" alt="Review 1">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/450/350" alt="Review 2">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/200/350" alt="Review 3">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/300/350" alt="Review 4">
+        </picture>
+        <picture class="review">
+          <img src="https://picsum.photos/350/300" alt="Review 5">
+        </picture>
+      </div>
+      <button class="slider-button next" aria-label="Next slide">❯</button>
+    </div>
+  </section>
+  <footer>
+    <ul>
+      <li id="bold-title">Contact Information</li>
+      <li><a href="tel:+">+359 888 555 491</a></li>
+      <li><a href="mailto:info@skarsphotography.com">info@skarsphotography.com</a></li>
+      <li><a href="https://www.instagram.com/skars_events/" target="_blank" rel="noopener noreferrer">@skars_ph</a></li>
+    </ul>
+    <ul>
+      <li id="bold-title">Quick Links</li>
+      <li>Portfolio</li>
+      <li>Hire Me</li>
+      <li>About Me</li>
+      <li>Contact Me</li>
+      <li>FAQ</li>
+    </ul>
+    <ul>
+      <li id="bold-title">Legal</li>
+      <li>Privacy Policy</li>
+      <li>Terms & Conditions</li>
+    </ul>
+    <img src="media/skars_logo.png" alt="footer-logo" id="footer-logo">
+  </footer>
+  <!-- <h1>Welcome to My Photography</h1>
+  <a href="portfolio.html">View My Portfolio</a> -->
 </body>
 </html>
