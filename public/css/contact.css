@@ -1,0 +1,369 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: local('Open Sans Condensed Regular'), local('OpenSansCondensed-Regular'),
+      url('../fonts/OpenSans_Condensed-Regular.woff2') format('woff2'),
+      url('../fonts/OpenSans_Condensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans Bold Condensed';
+  src: local('Open Sans Condensed SemiBold'), local('OpenSansCondensed-SemiBold'),
+      url('../fonts/OpenSans_Condensed-SemiBold.woff2') format('woff2'),
+      url('../fonts/OpenSans_Condensed-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'),
+      url('../fonts/PermanentMarker-Regular.woff2') format('woff2'),
+      url('../fonts/PermanentMarker-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --title-font: 'Permanent Marker';
+  --body-font: 'Open Sans Condensed';
+  --black: #000000;
+  --white: #ffffff;
+  --title-size: 2.5em;
+  --body-size: 1.2em;
+  --button-size: 1.7em;
+  --container-width: 80%;
+  --margin-left: 140px;
+}
+
+body {
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+
+header {
+  background-color: transparent;
+}
+
+#header-content {
+  margin-inline: auto;
+  width: var(--container-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-content img {
+  width: 70px;
+  height: auto;
+  margin: 10px;
+  transition: scale 0.3s ease-in-out;
+}
+
+#header-content nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+#header-content nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--title-font);
+  font-size: 1.2em;
+  transition: scale 0.3s ease-in-out;
+}
+
+#header-content nav a:hover,
+#header-content img:hover {
+  transition: scale 0.3s ease-in-out;
+  scale: 1.1;
+}
+
+/* Contact Me Page Styles */
+
+.work-together,
+.what-you-get,
+.reviews-section,
+.contact-me-section {
+  padding: 40px 0;
+}
+
+.contact-content {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 3em;
+  align-items: center; /* Align items to the top */
+}
+
+.contact-content.centered {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.work-together-content,
+.work-together-image,
+.find-me-here,
+.faq-section {
+  max-width: 50%;
+  width: 50%;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.work-together-content h1,
+.what-you-get h1 {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.work-together-content p,
+.what-you-get p {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.get-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  margin-top: 20px;
+}
+
+.get-items article {
+  flex: 1;
+}
+
+.find-me-here ul,
+.faq-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section.reviews {
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+.reviews h1, .marker-bg {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  text-align: center;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews>img, .contact-content.centered>img {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+}
+
+.reviews-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.reviews-grid {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.review {
+  flex: 0 0 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.review img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 600px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+.reviews-section .review-images {
+  display: flex;
+  justify-content: space-around; 
+  gap: 1em; 
+  margin-top: 20px;
+}
+
+.reviews-section .review-images img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+.reviews-section .review-images {
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews-section .review-images img {
+  margin-bottom: 10px; /* Add space between stacked images */
+}
+
+.find-me-here .marker-bg,
+.faq-section .marker-bg {
+    position: static;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-image: url('../media/reviews-bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 5px 15px;
+    background-position: center;
+    color: var(--black);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.find-me-here,
+.faq-section {
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.find-me-here li,
+.faq-section li {
+    font-family: var(--body-font);
+    font-size: var(--body-size);
+    color: var(--white);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.faq-section h3 {
+    font-family: var(--body-font); /* Using body font for questions as well */
+    font-size: var(--body-size);
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+footer {
+  background-image: url('../media/footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: 268vw 36vh; 
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1em;
+  padding-block: 4em;
+  position: relative;
+  overflow: hidden;
+  height: 36vh; 
+}
+
+li#bold-title {
+  font-family: 'Open Sans Bold Condensed';
+  font-size: var(--body-size);
+  margin-bottom: 10px;
+}
+
+li {
+  font-family: var(--body-font);
+  color: var(--black);
+  text-decoration: none;
+  list-style: none;
+}
+
+footer img {
+  height: auto;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .work-together-image,
+  .work-together-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .get-items {
+    flex-direction: column;
+  }
+
+  .get-items article {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between stacked items */
+  }
+
+  .find-me-here,
+  .faq-section {
+    max-width: 100%;
+    width: 100%;
+  }
+}

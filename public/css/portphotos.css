@@ -1,0 +1,297 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: local('Open Sans Condensed Regular'), local('OpenSansCondensed-Regular'),
+      url('../fonts/OpenSans_Condensed-Regular.woff2') format('woff2'),
+      url('../fonts/OpenSans_Condensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans Bold Condensed';
+  src: local('Open Sans Condensed SemiBold'), local('OpenSansCondensed-SemiBold'),
+      url('../fonts/OpenSans_Condensed-SemiBold.woff2') format('woff2'),
+      url('../fonts/OpenSans_Condensed-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'),
+      url('../fonts/PermanentMarker-Regular.woff2') format('woff2'),
+      url('../fonts/PermanentMarker-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+  --title-font: 'Permanent Marker';
+  --body-font: 'Open Sans Condensed';
+  --black: #000000;
+  --white: #ffffff;
+  --title-size: 2.5em;
+  --body-size: 1.2em;
+  --button-size: 1.7em;
+  --container-width: 80%;
+  --margin-left: 140px;
+}
+
+body {
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: transparent;
+}
+
+#header-content {
+margin-inline: auto;
+width: var(--container-width);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+#header-content img {
+transition: scale 0.3s ease-in-out;
+width: 70px;
+height: auto;
+margin: 10px;
+}
+
+#header-content nav {
+width: 50%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+}
+
+#header-content nav a {
+color: var(--white);
+text-decoration: none;
+font-family: var(--title-font);
+font-size: 1.2em;
+transition: scale 0.3s ease-in-out;
+}
+
+#header-content nav a:hover, #header-content img:hover {
+transition: scale 0.3s ease-in-out;
+scale: 1.1;
+}
+
+/* Page Title Section */
+.page-title {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-arrow {
+    position: absolute;
+    left: -80px; 
+    font-size: var(--title-size);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--title-font);
+    transition: transform 0.3s ease-in-out;
+}
+
+.back-arrow:hover {
+    transform: scale(1.1);
+}
+
+.page-title .marker-bg {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
+  background-image: url('../media/reviews-bg.png'); 
+  background-repeat: no-repeat;
+  background-size: contain; 
+  background-position: center;
+  padding: 10px 30px; 
+  display: inline-block; 
+  text-align: center;
+}
+
+/* Image Grid Section */
+.image-grid {
+    width: var(--container-width);
+    margin: 0 auto 40px auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; 
+}
+
+/* Like What You See Section */
+.like-what-you-see {
+  padding: 40px 0;
+  background-color: var(--black); 
+}
+
+.content-container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 3em;
+  align-items: center;
+}
+
+.like-what-text {
+  flex: 1;
+}
+
+.like-what-text h1 {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.like-what-text p {
+    font-family: var(--body-font);
+    font-size: var(--body-size);
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.like-what-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#hero-button {
+  margin-inline: 10px; 
+  background-image: url('../media/buttons-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: none;
+  padding: 10px 50px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: scale 0.3s ease-in-out;
+}
+
+#hero-button:hover {
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
+
+#hero-button a {
+  color: var(--black);
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: var(--button-size);
+  position: relative;
+  top: -7px;
+}
+
+/* Footer */
+footer {
+  background-image: url('../media/footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: 268vw 35vh; 
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1em;
+  padding-block: 4em;
+  position: relative;
+  overflow: hidden;
+  height: 36vh; 
+}
+
+li#bold-title {
+  font-family: 'Open Sans Bold Condensed';
+  font-size: var(--body-size);
+  margin-bottom: 10px;
+}
+
+li {
+  font-family: var(--body-font);
+  color: var(--black);
+  text-decoration: none;
+  list-style: none;
+}
+
+footer img {
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #header-content nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .back-arrow {
+      left: 10px; 
+      font-size: 1.5em;
+  }
+
+  .page-title .marker-bg {
+      font-size: 1.8em;
+      padding: 5px 15px;
+  }
+
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .like-what-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #hero-button {
+      width: 100%;
+  }
+
+  footer {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding-block: 2em;
+  }
+} 
