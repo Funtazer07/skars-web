@@ -1,3 +1,6 @@
+@import url('header.css');
+@import url('footer.css');
+
 @font-face {
   font-family: 'Open Sans Condensed';
   src: local('Open Sans Condensed Regular'), local('OpenSansCondensed-Regular'),
@@ -51,49 +54,7 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  background-color: transparent;
-}
-
-#header-content {
-  margin-inline: auto;
-  width: var(--container-width);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#header-content img {
-  width: 70px;
-  height: auto;
-  margin: 10px;
-  transition: scale 0.3s ease-in-out;
-}
-
-#header-content nav {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-#header-content nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-family: var(--title-font);
-  font-size: 1.2em;
-  transition: scale 0.3s ease-in-out;
-}
-
-#header-content nav a:hover,
-#header-content img:hover {
-  transition: scale 0.3s ease-in-out;
-  scale: 1.1;
-}
-
 /* Contact Me Page Styles */
-
 .work-together,
 .what-you-get,
 .reviews-section,
@@ -106,7 +67,7 @@ header {
   margin: 0 auto;
   display: flex;
   gap: 3em;
-  align-items: center; /* Align items to the top */
+  align-items: center; 
 }
 
 .contact-content.centered {
@@ -254,7 +215,7 @@ section.reviews {
 .reviews-section .review-images img {
     max-width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
+    display: block; 
 }
 
 .reviews-section .review-images {
@@ -263,7 +224,7 @@ section.reviews {
 }
 
 .reviews-section .review-images img {
-  margin-bottom: 10px; /* Add space between stacked images */
+  margin-bottom: 10px; 
 }
 
 .find-me-here .marker-bg,
@@ -273,13 +234,14 @@ section.reviews {
     height: auto;
     text-align: center;
     background-image: url('../media/reviews-bg.png');
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding: 5px 15px;
+    padding: 10px 30px;
     background-position: center;
     color: var(--black);
     display: inline-block;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 
 .find-me-here,
@@ -299,71 +261,359 @@ section.reviews {
 }
 
 .faq-section h3 {
-    font-family: var(--body-font); /* Using body font for questions as well */
+    font-family: var(--body-font); 
     font-size: var(--body-size);
     color: var(--white);
     margin-bottom: 5px;
 }
 
-footer {
-  background-image: url('../media/footer-bg.png');
-  background-repeat: no-repeat;
-  background-size: 268vw 36vh; 
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 1em;
-  padding-block: 4em;
-  position: relative;
-  overflow: hidden;
-  height: 36vh; 
-}
-
-li#bold-title {
-  font-family: 'Open Sans Bold Condensed';
-  font-size: var(--body-size);
-  margin-bottom: 10px;
-}
-
-li {
-  font-family: var(--body-font);
-  color: var(--black);
-  text-decoration: none;
-  list-style: none;
-}
-
-footer img {
-  height: auto;
-}
-
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .contact-content {
-    flex-direction: column;
-    gap: 20px;
+    width: 90%;
   }
 
-  .work-together-image,
-  .work-together-content {
+  .contact-content img {
     max-width: 100%;
-    width: 100%;
+    height: auto;
+  }
+
+  .work-together-content {
+    width: 90%;
+  }
+
+  .work-together-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .contact-content {
+    width: 90%;
+    gap: 2em;
+  }
+
+  .work-together-content,
+  .work-together-image,
+  .find-me-here,
+  .faq-section {
+    max-width: 45%;
+  }
+
+  .work-together-content h1,
+  .what-you-get h1 {
+    font-size: 2.2em;
+  }
+
+  .work-together-content p,
+  .what-you-get p {
+    font-size: 1.1em;
   }
 
   .get-items {
+    gap: 1.5em;
+  }
+
+  .get-items article h1 {
+    font-size: 1.8em;
+  }
+
+  .get-items article p {
+    font-size: 1em;
+  }
+
+  .find-me-here .marker-bg,
+  .faq-section .marker-bg {
+    font-size: 2em;
+    padding: 8px 25px;
+  }
+
+  .find-me-here li,
+  .faq-section li {
+    font-size: 1.1em;
+  }
+
+  .faq-section h3 {
+    font-size: 1.1em;
+  }
+
+  .reviews h1 {
+    font-size: 2.2em;
+  }
+
+  .review {
+    height: 450px;
+  }
+
+  .review img {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-content,
+  .work-together-content {
     flex-direction: column;
+    text-align: center;
+    gap: 2em;
   }
 
-  .get-items article {
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 20px; /* Add space between stacked items */
-  }
-
+  .work-together-content,
+  .work-together-image,
   .find-me-here,
   .faq-section {
     max-width: 100%;
     width: 100%;
+  }
+
+  .work-together-content h1,
+  .what-you-get h1 {
+    font-size: 2em;
+  }
+
+  .work-together-content p,
+  .what-you-get p {
+    font-size: 1.1em;
+  }
+
+  .get-items {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .get-items article {
+    width: 100%;
+  }
+
+  .get-items article h1 {
+    font-size: 1.8em;
+  }
+
+  .get-items article p {
+    font-size: 1em;
+  }
+
+  .find-me-here li,
+  .faq-section li {
+    margin-bottom: 1em;
+  }
+
+  .faq-section h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+  }
+
+  .faq-section p {
+    font-size: 0.9em;
+  }
+
+  .reviews h1 {
+    font-size: 2em;
+  }
+
+  .review {
+    height: 400px;
+  }
+
+  .burger-menu {
+    display: flex;
+    margin: 0;
+    position: static;
+    width: 30px;
+    height: 21px;
+    flex-shrink: 0;
+  }
+
+  .find-me-here .marker-bg,
+  .faq-section .marker-bg {
+    padding: 8px 25px;
+    font-size: 1.8em;
+  }
+}
+
+/* Extra small screens (up to 480px) */
+@media (max-width: 480px) {
+  .contact-content,
+  .work-together-content {
+    padding: 0 0.5em;
+  }
+
+  .contact-info h1,
+  .work-together-text h1 {
+    font-size: 1.8em;
+  }
+
+  .contact-info p,
+  .work-together-text p {
+    font-size: 1em;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1em;
+  }
+
+  .get-items article h1 {
+    font-size: 1.4em;
+  }
+
+  .get-items article p {
+    font-size: 0.9em;
+  }
+
+  .find-me-here li,
+  .faq-section li {
+    margin-bottom: 0.8em;
+  }
+
+  .faq-section h3 {
+    font-size: 1em;
+  }
+
+  .faq-section p {
+    font-size: 0.8em;
+  }
+
+  .reviews h1 {
+    font-size: 1.8em;
+  }
+
+  .review {
+    height: 350px;
+  }
+
+  .slider-button {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .find-me-here .marker-bg,
+  .faq-section .marker-bg {
+    padding: 6px 20px;
+    font-size: 1.6em;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .contact-content {
+    width: 100%;
+  }
+
+  .contact-info,
+  .work-together-text {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .contact-info h1 {
+    color: black;
+  }
+
+  .contact-info p {
+    color: black;
+  }
+}
+
+/* Responsive styles for reviews section */
+@media (max-width: 768px) {
+  .reviews h1 {
+    font-size: calc(var(--title-size) * 0.8);
+  }
+
+  .review {
+    height: 400px;
+  }
+
+  .review img {
+    max-width: 100%;
+  }
+
+  .slider-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .content-container {
+    width: 90%;
+  }
+
+  .like-what-buttons img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger-menu div {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.active div:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  #header-content {
+    position: relative;
+  }
+
+  #header-content nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  #header-content nav.active {
+    right: 0;
+  }
+
+  #header-content nav a {
+    font-size: 1.5em;
   }
 }

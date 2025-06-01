@@ -1,3 +1,6 @@
+@import url('header.css');
+@import url('footer.css');
+
 @font-face {
   font-family: 'Open Sans Condensed';
   src: local('Open Sans Condensed Regular'), local('OpenSansCondensed-Regular'),
@@ -51,49 +54,7 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  background-color: transparent;
-}
-
-#header-content {
-  margin-inline: auto;
-  width: var(--container-width);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#header-content img {
-  width: 70px;
-  height: auto;
-  margin: 10px;
-  transition: scale 0.3s ease-in-out;
-}
-
-#header-content nav {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-#header-content nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-family: var(--title-font);
-  font-size: 1.2em;
-  transition: scale 0.3s ease-in-out;
-}
-
-#header-content nav a:hover,
-#header-content img:hover {
-  transition: scale 0.3s ease-in-out;
-  scale: 1.1;
-}
-
 /* About Me Page Styles */
-
 .about-me,
 .yep-thats-me,
 .why-photography,
@@ -219,43 +180,108 @@ img {
   top: -7px;
 }
 
-footer {
-  background-image: url('../media/footer-bg.png');
-  background-repeat: no-repeat;
-  background-size: 268vw 36vh;
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 1em;
-  padding-block: 4em;
-  position: relative;
-  overflow: hidden;
-  height: 36vh;
-}
-
-li#bold-title {
-  font-family: 'Open Sans Bold Condensed';
-  font-size: var(--body-size);
-  margin-bottom: 10px;
-}
-
-li {
-  font-family: var(--body-font);
-  color: var(--black);
-  text-decoration: none;
-  list-style: none;
-}
-
-footer img {
-  height: auto;
-}
-
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media screen and (min-width: 1200px) {
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    gap: 4em;
+  }
+
+  .about-text {
+    font-size: 1.2em;
+  }
+
+  .about-image img {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .about-content {
+    width: 90%;
+  }
+
+  .about-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .about-container {
+    max-width: 960px;
+    padding: 0 20px;
+  }
+
+  .about-content {
+    gap: 3em;
+  }
+
+  .about-text {
+    font-size: 1.1em;
+  }
+
+  .about-image img {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about-container {
+    max-width: 720px;
+  }
+
+  .about-content {
+    gap: 2em;
+  }
+
+  .about-text {
+    font-size: 1em;
+  }
+
+  .about-image img {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about-content {
+    width: 95%;
+  }
+
+  .about-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-container {
+    padding: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .about-content {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .who-am-i-content,
+  .yep-thats-me-content,
+  .why-photography-text,
+  .interested-content {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
   .who-am-i-image,
@@ -263,15 +289,478 @@ footer img {
   .why-photography-images,
   .interested-image {
     width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
-  .about-content.centered {
+  .about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .about-images img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .who-am-i-content h1 {
+    font-size: 2em;
+    margin-bottom: 0.8em;
+    word-wrap: break-word;
+  }
+
+  .who-am-i-content p,
+  .yep-thats-me-content p,
+  .why-photography-text p,
+  .interested-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 1.2em;
+    word-wrap: break-word;
+  }
+
+  .marker-bg {
+    font-size: 1.8em;
+    margin-bottom: 0.8em;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .about-text {
+    width: 100%;
+    font-size: 0.95em;
+  }
+
+  .about-text h2 {
+    font-size: 1.8em;
+  }
+
+  .about-text p {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .skill-item {
+    padding: 0.8em;
+  }
+
+  .skill-item h3 {
+    font-size: 1.1em;
+  }
+
+  .skill-item p {
+    font-size: 0.9em;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  #header-content nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 2em;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  #header-content nav.active {
+    right: 0;
+  }
+
+  #header-content nav a {
+    font-size: 1.5em;
+  }
+
+  #header-content {
+    position: relative;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  .about-content img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .about-text {
+    width: 100%;
     text-align: center;
+  }
+
+  .about-text h1 {
+    font-size: 2em;
+  }
+
+  .about-text p {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 1.5em;
+  }
+
+  .about-text p {
+    font-size: 0.9em;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-item {
+    padding: 0.6em;
+  }
+
+  .skill-item h3 {
+    font-size: 1em;
+  }
+
+  .skill-item p {
+    font-size: 0.85em;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 0 0.8em;
+    overflow: hidden;
+  }
+
+  .about-text h1 {
+    font-size: 1.8em;
+  }
+
+  .about-text p {
+    font-size: 1em;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 0 0.8em;
+  }
+
+  .who-am-i-content,
+  .yep-thats-me-content,
+  .why-photography-text,
+  .interested-content {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .who-am-i-image,
+  .yep-thats-me-images,
+  .why-photography-images,
+  .interested-image {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .who-am-i-content h1,
+  .marker-bg {
+    font-size: 1.6em;
+  }
+
+  .who-am-i-content p,
+  .yep-thats-me-content p,
+  .why-photography-text p,
+  .interested-content p {
+    font-size: 1em;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .about-container {
+    display: block;
+  }
+
+  .about-image {
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    max-width: 300px;
+  }
+
+  .about-text {
+    overflow: hidden;
+  }
+
+  .skills-grid {
+    break-inside: avoid;
+  }
+
+  .skill-item {
+    break-inside: avoid;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* About Me Section Responsive Styles */
+@media screen and (max-width: 767px) {
+  .about-me .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .who-am-i-content {
+    width: 100%;
+  }
+
+  .who-am-i-content h1 {
+    font-size: 2.5em;
+  }
+
+  .who-am-i-content p {
+    font-size: 1.1em;
+  }
+
+  .who-am-i-image {
+    width: 100%;
+  }
+
+  .who-am-i-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Yep That's Me Section Responsive Styles */
+@media screen and (max-width: 767px) {
+  .yep-thats-me .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .yep-thats-me-content {
+    width: 100%;
+  }
+
+  .yep-thats-me-content .marker-bg {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .yep-thats-me-content p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
+
+  .yep-thats-me-images {
+    width: 100%;
+  }
+
+  .about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .about-images img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Why Photography Section Responsive Styles */
+@media screen and (max-width: 767px) {
+  .why-photography .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .why-photography-text {
+    width: 100%;
+  }
+
+  .why-photography-text .marker-bg {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .why-photography-text p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
+
+  .why-photography-images {
+    width: 100%;
+  }
+}
+
+/* Interested Section Responsive Styles */
+@media screen and (max-width: 767px) {
+  .interested .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .interested-content {
+    width: 100%;
+  }
+
+  .interested-content .marker-bg {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .interested-content p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+  }
+
+  .interested-image {
+    width: 100%;
+  }
+
+  .interested-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 480px) {
+  .who-am-i-content h1,
+  .yep-thats-me-content .marker-bg,
+  .why-photography-text .marker-bg,
+  .interested-content .marker-bg {
+    font-size: 1.8em;
+  }
+
+  .who-am-i-content p,
+  .yep-thats-me-content p,
+  .why-photography-text p,
+  .interested-content p {
+    font-size: 1em;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: 1em;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger-menu div {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.active div:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  #header-content {
+    position: relative;
+  }
+
+  #header-content nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 2em;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  #header-content nav.active {
+    right: 0;
+  }
+
+  #header-content nav a {
+    font-size: 1.5em;
   }
 } 
