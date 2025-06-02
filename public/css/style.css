@@ -88,7 +88,7 @@ section.hero {
   max-width: 90%;
   background-image: url('../media/des-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 110% 100%;
   background-position: center;
   padding: 10px 20px;
   display: inline-block;
@@ -177,12 +177,11 @@ aside.photo img {
 }
 
 article#about-description {
+  width: 50%;
   display: flex;
-  width: 40%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 100%;
+  justify-content: center;
 }
 
 #about-description p {
@@ -190,16 +189,15 @@ article#about-description {
   font-family: var(--body-font);
   color: var(--black);
   z-index: 2;
-  width: 350px;
   font-size: var(--body-size);
-  margin-left: 110px;
-  max-width: 90%;
+  max-width: 500px;
   background-image: url('../media/des-bg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
   padding: 10px 20px;
-  display: inline-block;
+  display: block;
+  text-align: center;
 }
 
 section.reviews {
@@ -411,8 +409,7 @@ li {
     height: 57%;
     margin-top: -100px;
     max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
   }
 
   article#about-description {
@@ -511,8 +508,10 @@ li {
   }
 
   #scratchball {
+    height: 100%;
     max-width: 90%;
     margin-top: -80px;
+    margin-left: 10px;
   }
 
   .reviews h1 {

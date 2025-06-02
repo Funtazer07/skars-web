@@ -612,31 +612,18 @@ section.reviews {
 /* Burger Menu Styles */
 .burger-menu {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
   cursor: pointer;
   z-index: 1000;
 }
 
-.burger-menu div {
-  width: 100%;
-  height: 3px;
-  background-color: var(--white);
-  transition: all 0.3s ease-in-out;
+.burger-menu img {
+  width: 30px;
+  height: 21px;
+  object-fit: contain;
 }
 
-.burger-menu.active div:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.burger-menu.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active div:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+.burger-menu.active img {
+  /* Add any styles needed for the active state of the image, if any */
 }
 
 @media screen and (max-width: 767px) {
