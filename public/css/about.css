@@ -89,11 +89,48 @@ body {
   flex: 1;
 }
 
+.who-am-i-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-am-i-image img {
+  width: 80%;
+  height: auto;
+  max-width: 400px;
+}
+
+/* Consolidated .about-images styles for specific sections */
 .yep-thats-me .about-images,
 .why-photography-images .about-images {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1em;
+  margin: 0 auto;
+}
+
+.yep-thats-me .about-images {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px; /* Keeping max-width for yep-thats-me images */
+}
+
+.why-photography-images .about-images {
+  grid-template-columns: 1fr;
+  /* max-width is removed for wider desktop view as requested previously */
+}
+
+.yep-thats-me .about-images img {
+  width: 100%;
+  height: 250px; /* Specific height for yep-thats-me images */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.why-photography-images .about-images img {
+  width: 100%;
+  height: 700px; /* Specific height for why-photography image */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .marker-bg {
@@ -125,12 +162,6 @@ body {
   color: var(--white);
   margin-bottom: 20px;
   line-height: 1.6;
-}
-
-.about-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .image-placeholder {
@@ -419,6 +450,46 @@ img {
   .about-text p {
     font-size: 1.1em;
   }
+
+  .who-am-i-image {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .who-am-i-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .yep-thats-me .about-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8em;
+    max-width: 500px;
+  }
+
+  .why-photography-images .about-images {
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+    max-width: 600px;
+  }
+
+  .yep-thats-me .about-images img {
+    height: 220px;
+  }
+
+  .why-photography-images .about-images img {
+    height: 350px;
+  }
+
+  .why-photography-images .about-images {
+    gap: 0.8em;
+    max-width: 600px;
+  }
+
+  .why-photography-images .about-images img {
+    height: 350px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -502,6 +573,27 @@ img {
   .why-photography-text p,
   .interested-content p {
     font-size: 1em;
+  }
+
+  .who-am-i-image {
+    max-width: 280px;
+  }
+
+  .who-am-i-image img {
+    max-width: 250px;
+  }
+
+  .yep-thats-me .about-images {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
+
+  .why-photography-images .about-images {
+    max-width: 400px;
+  }
+
+  .why-photography-images .about-images img {
+    height: 300px;
   }
 }
 
@@ -634,6 +726,14 @@ img {
   .why-photography-images {
     width: 100%;
   }
+  .why-photography-images .about-images {
+    gap: 0.8em;
+    max-width: 600px;
+  }
+
+  .why-photography-images .about-images img {
+    height: 350px;
+  }
 }
 
 /* Interested Section Responsive Styles */
@@ -699,6 +799,14 @@ img {
 
   .hero-buttons button {
     width: 100%;
+  }
+
+  .why-photography-images .about-images {
+    max-width: 400px;
+  }
+
+  .why-photography-images .about-images img {
+    height: 300px;
   }
 }
 

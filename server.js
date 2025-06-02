@@ -1,17 +1,21 @@
 const express = require('express');
 const session = require('express-session');
-const multer = require('multer');
 const bcrypt = require('bcrypt');
 const path = require('path');
+require('dotenv').config();
+
+// Import upload routes and cloudinary config
+const uploadRoutes = require('./routes/upload');
+const { cloudinary } = require('./config/cloudinary');
 
 const app = express();
 const PORT = 3000;
 
 // Middleware
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/admin', express.static('admin'));
-app.use('/uploads', express.static('uploads'));
 
 app.use(session({
   secret: 'secret-key',
@@ -19,17 +23,34 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-// Upload config
-const storage = multer.diskStorage({
-  destination: 'uploads/',
-  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname),
+// API routes must come before static file serving
+app.use('/api/upload', uploadRoutes);
+
+// Serve static files
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-const upload = multer({ storage });
+
+app.get('/concerts', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'concerts.html'));
+});
+
+app.get('/events', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'events.html'));
+});
+
+app.get('/portraits', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'portraits.html'));
+});
+
+app.get('/nightlife', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'nightlife.html'));
+});
 
 // Fake login
 const ADMIN = {
   username: 'admin',
-  password: '1234' // password: '1234'
+  password: '1234'
 };
 
 // Login route
@@ -43,11 +64,10 @@ app.post('/login', (req, res) => {
   res.status(401).send('Unauthorized');
 });
 
-// Upload route
-app.post('/upload', upload.single('photo'), (req, res) => {
-  if (!req.session.user) return res.status(403).send('Not logged in');
-  console.log('Uploaded:', req.file.filename);
-  res.redirect('/admin/dashboard.html');
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
