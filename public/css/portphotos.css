@@ -65,7 +65,10 @@ body {
 }
 
 .title-container {
-  position: relative;
+  margin-right: 12em;
+  filter: invert(1);
+  z-index: 9999;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,13 +92,15 @@ body {
   font-family: var(--title-font);
   font-size: var(--title-size);
   color: var(--black);
-  background-image: url('../media/reviews-bg.png'); 
+  background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: 100% auto;
   background-position: center;
-  padding: 10px 30px; 
-  display: inline-block; 
-  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* Image Grid Section */

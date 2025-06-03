@@ -54,110 +54,60 @@ body {
   overflow-x: hidden;
 }
 
-/* About Me Page Styles */
-.about-me,
-.yep-thats-me,
-.why-photography,
-.interested {
-  padding: 40px 0;
-}
-
-.about-content {
-  width: var(--container-width);
-  margin: 0 auto;
-  display: flex;
-  gap: 5em;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.about-content.centered {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.who-am-i-content,
-.who-am-i-image,
-.yep-thats-me-images,
-.yep-thats-me-content,
-.why-photography-text,
-.why-photography-images,
-.interested-image,
-.interested-content {
-  max-width: 50%;
-  width: 50%;
-  flex: 1;
-}
-
-.who-am-i-image {
+.page-title {
+  margin-top: 20px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.who-am-i-image img {
-  width: 80%;
-  height: auto;
-  max-width: 400px;
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Consolidated .about-images styles for specific sections */
-.yep-thats-me .about-images,
-.why-photography-images .about-images {
-  display: grid;
-  gap: 1em;
-  margin: 0 auto;
-}
-
-.yep-thats-me .about-images {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 600px; /* Keeping max-width for yep-thats-me images */
-}
-
-.why-photography-images .about-images {
-  grid-template-columns: 1fr;
-  /* max-width is removed for wider desktop view as requested previously */
-}
-
-.yep-thats-me .about-images img {
-  width: 100%;
-  height: 250px; /* Specific height for yep-thats-me images */
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.why-photography-images .about-images img {
-  width: 100%;
-  height: 700px; /* Specific height for why-photography image */
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.marker-bg {
+.page-title .marker-bg {
   font-family: var(--title-font);
   font-size: var(--title-size);
   color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: contain;
   background-position: center;
-  padding: 10px 20px;
+  padding: 10px 30px;
   display: inline-block;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-.who-am-i-content h1 {
+.like-what-you-see {
+  padding: 40px 0;
+  background-color: var(--black);
+}
+
+.content-container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 3em;
+  align-items: center;
+}
+
+.like-what-text {
+  flex: 1;
+}
+
+.like-what-text h1 {
   font-family: var(--title-font);
   font-size: var(--title-size);
   color: var(--white);
   margin-bottom: 20px;
 }
 
-.about-me p,
-.why-photography p,
-.interested p,
-.yep-thats-me p {
+.like-what-text p {
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--white);
@@ -165,650 +115,34 @@ body {
   line-height: 1.6;
 }
 
-.image-placeholder {
-  background-color: #555;
-  /* Placeholder color */
-  width: 100%;
-  height: 150px;
-}
-
-img {
-  margin: 10px;
-}
-
-.image-placeholder.large {
-  width: 100%;
-  height: 300px;
-}
-
-.hero-buttons {
-  margin-top: 20px;
+.like-what-buttons {
+  flex: 1;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-#hero-button {
-  background-image: url('../media/buttons-bg.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border: none;
-  padding: 10px 50px;
-  cursor: pointer;
-  background-color: transparent;
-  transition: scale 0.3s ease-in-out;
+.like-what-buttons img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  max-width: 500px;
+  border-radius: 8px;
 }
 
-#hero-button:hover {
-  scale: 1.1;
-  transition: scale 0.3s ease-in-out;
+.about-images {
+  width: 100%;
+  max-width: 500px;
 }
 
-#hero-button a {
-  color: var(--black);
-  text-decoration: none;
-  font-family: var(--body-font);
-  font-size: var(--button-size);
-  position: relative;
-  top: -7px;
+.about-images img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 20% center;
+  border-radius: 8px;
 }
 
-/* Responsive Styles */
-@media screen and (min-width: 1200px) {
-  .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .about-content {
-    gap: 4em;
-  }
-
-  .about-text {
-    font-size: 1.2em;
-  }
-
-  .about-image img {
-    max-width: 500px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .about-content {
-    width: 90%;
-  }
-
-  .about-content img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .about-container {
-    max-width: 960px;
-    padding: 0 20px;
-  }
-
-  .about-content {
-    gap: 3em;
-  }
-
-  .about-text {
-    font-size: 1.1em;
-  }
-
-  .about-image img {
-    max-width: 450px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .about-container {
-    max-width: 720px;
-  }
-
-  .about-content {
-    gap: 2em;
-  }
-
-  .about-text {
-    font-size: 1em;
-  }
-
-  .about-image img {
-    max-width: 400px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .about-content {
-    width: 95%;
-  }
-
-  .about-content img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .about-container {
-    padding: 20px;
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-    width: 85%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .who-am-i-content,
-  .yep-thats-me-content,
-  .why-photography-text,
-  .interested-content {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .who-am-i-image,
-  .yep-thats-me-images,
-  .why-photography-images,
-  .interested-image {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .about-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .about-images img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    object-fit: contain;
-  }
-
-  .who-am-i-content h1 {
-    font-size: 2em;
-    margin-bottom: 0.8em;
-    word-wrap: break-word;
-  }
-
-  .who-am-i-content p,
-  .yep-thats-me-content p,
-  .why-photography-text p,
-  .interested-content p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    margin-bottom: 1.2em;
-    word-wrap: break-word;
-  }
-
-  .marker-bg {
-    font-size: 1.8em;
-    margin-bottom: 0.8em;
-    word-wrap: break-word;
-    white-space: normal;
-  }
-
-  .about-text {
-    width: 100%;
-    font-size: 0.95em;
-  }
-
-  .about-text h2 {
-    font-size: 1.8em;
-  }
-
-  .about-text p {
-    font-size: 1em;
-    margin-bottom: 1em;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-  }
-
-  .skill-item {
-    padding: 0.8em;
-  }
-
-  .skill-item h3 {
-    font-size: 1.1em;
-  }
-
-  .skill-item p {
-    font-size: 0.9em;
-  }
-
-
-  #header-content nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    transition: right 0.3s ease-in-out;
-    z-index: 999;
-  }
-
-  #header-content nav.active {
-    right: 0;
-  }
-
-  #header-content nav a {
-    font-size: 1.5em;
-  }
-
-  #header-content {
-    position: relative;
-  }
-
-  .about-content {
-    width: 100%;
-    padding: 0 1em;
-  }
-
-  .about-content img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .about-text {
-    width: 100%;
-    text-align: center;
-  }
-
-  .about-text h1 {
-    font-size: 2em;
-  }
-
-  .about-text p {
-    font-size: 1.1em;
-  }
-
-  .who-am-i-image {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-
-  .who-am-i-image img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .yep-thats-me .about-images {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8em;
-    max-width: 500px;
-  }
-
-  .why-photography-images .about-images {
-    grid-template-columns: 1fr;
-    gap: 0.8em;
-    max-width: 600px;
-  }
-
-  .yep-thats-me .about-images img {
-    height: 220px;
-  }
-
-  .why-photography-images .about-images img {
-    height: 350px;
-  }
-
-  .why-photography-images .about-images {
-    gap: 0.8em;
-    max-width: 600px;
-  }
-
-  .why-photography-images .about-images img {
-    height: 350px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .about-container {
-    padding: 15px;
-  }
-
-  .about-text h2 {
-    font-size: 1.5em;
-  }
-
-  .about-text p {
-    font-size: 0.9em;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skill-item {
-    padding: 0.6em;
-  }
-
-  .skill-item h3 {
-    font-size: 1em;
-  }
-
-  .skill-item p {
-    font-size: 0.85em;
-  }
-
-  .about-content {
-    width: 100%;
-    padding: 0 0.8em;
-    overflow: hidden;
-  }
-
-  .about-text h1 {
-    font-size: 1.8em;
-  }
-
-  .about-text p {
-    font-size: 1em;
-  }
-
-  .about-content {
-    width: 100%;
-    padding: 0 0.8em;
-  }
-
-  .who-am-i-content,
-  .yep-thats-me-content,
-  .why-photography-text,
-  .interested-content {
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .who-am-i-image,
-  .yep-thats-me-images,
-  .why-photography-images,
-  .interested-image {
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .about-images {
-    grid-template-columns: 1fr;
-    gap: 0.8em;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .who-am-i-content h1,
-  .marker-bg {
-    font-size: 1.6em;
-  }
-
-  .who-am-i-content p,
-  .yep-thats-me-content p,
-  .why-photography-text p,
-  .interested-content p {
-    font-size: 1em;
-  }
-
-  .who-am-i-image {
-    max-width: 280px;
-  }
-
-  .who-am-i-image img {
-    max-width: 250px;
-  }
-
-  .yep-thats-me .about-images {
-    grid-template-columns: 1fr;
-    max-width: 350px;
-  }
-
-  .why-photography-images .about-images {
-    max-width: 400px;
-  }
-
-  .why-photography-images .about-images img {
-    height: 300px;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .about-container {
-    display: block;
-  }
-
-  .about-image {
-    float: left;
-    margin-right: 2em;
-    margin-bottom: 1em;
-    max-width: 300px;
-  }
-
-  .about-text {
-    overflow: hidden;
-  }
-
-  .skills-grid {
-    break-inside: avoid;
-  }
-
-  .skill-item {
-    break-inside: avoid;
-  }
-
-  .about-content {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .about-content img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* About Me Section Responsive Styles */
-@media screen and (max-width: 767px) {
-  .about-me .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2em;
-  }
-
-  .who-am-i-content {
-    width: 100%;
-  }
-
-  .who-am-i-content h1 {
-    font-size: 2.5em;
-  }
-
-  .who-am-i-content p {
-    font-size: 1.1em;
-  }
-
-  .who-am-i-image {
-    width: 100%;
-  }
-
-  .who-am-i-image img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Yep That's Me Section Responsive Styles */
-@media screen and (max-width: 767px) {
-  .yep-thats-me .about-content {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 2em;
-  }
-
-  .yep-thats-me-content {
-    width: 100%;
-  }
-
-  .yep-thats-me-content .marker-bg {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-
-  .yep-thats-me-content p {
-    font-size: 1.1em;
-    margin-bottom: 1em;
-  }
-
-  .yep-thats-me-images {
-    width: 100%;
-  }
-
-  .about-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-  }
-
-  .about-images img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Why Photography Section Responsive Styles */
-@media screen and (max-width: 767px) {
-  .why-photography .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2em;
-  }
-
-  .why-photography-text {
-    width: 100%;
-  }
-
-  .why-photography-text .marker-bg {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-
-  .why-photography-text p {
-    font-size: 1.1em;
-    margin-bottom: 1em;
-  }
-
-  .why-photography-images {
-    width: 100%;
-  }
-  .why-photography-images .about-images {
-    gap: 0.8em;
-    max-width: 600px;
-  }
-
-  .why-photography-images .about-images img {
-    height: 350px;
-  }
-}
-
-/* Interested Section Responsive Styles */
-@media screen and (max-width: 767px) {
-  .interested .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 3em;
-  }
-
-  .interested-content {
-    width: 100%;
-  }
-
-  .interested-content .marker-bg {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-
-  .interested-content p {
-    font-size: 1.1em;
-    margin-bottom: 1.5em;
-  }
-
-  .interested-image {
-    width: 100%;
-  }
-
-  .interested-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-}
-
-/* Extra Small Screens */
-@media screen and (max-width: 480px) {
-  .who-am-i-content h1,
-  .yep-thats-me-content .marker-bg,
-  .why-photography-text .marker-bg,
-  .interested-content .marker-bg {
-    font-size: 1.8em;
-  }
-
-  .who-am-i-content p,
-  .yep-thats-me-content p,
-  .why-photography-text p,
-  .interested-content p {
-    font-size: 1em;
-  }
-
-  .about-images {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .hero-buttons button {
-    width: 100%;
-  }
-
-  .why-photography-images .about-images {
-    max-width: 400px;
-  }
-
-  .why-photography-images .about-images img {
-    height: 300px;
-  }
-}
-
-/* Styles for Find Me Here section with icons */
 .find-me-here ul {
   list-style: none;
   padding: 0;
@@ -855,23 +189,273 @@ img {
 }
 
 
-/* Styles for FAQ section */
-.faq-section h3 {
-  color: var(--white);
-  font-family: var(--title-font);
-  font-size: var(--title-size);
-  background-image: url('../media/reviews-bg.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  padding: 10px 20px;
-  display: inline-block;
-  margin-bottom: 20px; /* Add some margin below the h3 */
+section.reviews {
+  margin-top: 40px;
+  background-color: transparent;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 120px 0 40px;
 }
 
-/* Burger Menu Styles */
+.reviews h1 {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reviews p {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--white);
+  text-align: center;
+  margin: 0 0 30px;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviews p a {
+  color: var(--white);
+  text-decoration: underline;
+  font-family: var(--title-font);
+  transition: color 0.3s ease;
+}
+
+.reviews p a:hover {
+  color: #f0f0f0;
+}
+
+.reviews > img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+}
+
+.reviews-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+  z-index: 2;
+}
+
+.reviews-grid {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.review {
+  flex: 0 0 100%;
+  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  margin: 0;
+  width: 100%;
+}
+
+.review:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.review-content {
+  max-width: 800px;
+  text-align: center;
+  width: 100%;
+}
+
+.review-text {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  font-family: var(--title-font);
+  font-size: calc(var(--body-size) * 1.2);
+  color: var(--white);
+  margin-top: 20px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.review-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+  margin-right: 5px;
+}
+
+.review-date {
+  font-family: var(--body-font);
+  font-size: calc(var(--body-size) * 0.9);
+  color: var(--white);
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.marker-bg {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
+  background-image: url('../media/reviews-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0 auto 20px auto;
+}
+
+
+
+.slider-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button.prev {
+  left: 20px;
+}
+
+.slider-button.next {
+  right: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .content-container {
+    width: 90%;
+  }
+
+  .like-what-buttons img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .content-container {
+    width: 90%;
+    gap: 2em;
+  }
+
+  .like-what-text h1 {
+    font-size: 2.2em;
+  }
+
+  .like-what-text p {
+    font-size: 1.1em;
+  }
+
+  .page-title .marker-bg {
+    font-size: 2.2em;
+  }
+}
 
 @media screen and (max-width: 767px) {
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .like-what-text,
+  .like-what-buttons {
+    width: 100%;
+  }
+
+  .like-what-buttons img,
+  .about-images img {
+    height: 300px;
+  }
+
+  .like-what-text h1 {
+    font-size: 2em;
+  }
+
+  .like-what-text p {
+    font-size: 1.1em;
+  }
+
+  .like-what-buttons img {
+    max-width: 100%;
+  }
+
+  .page-title .marker-bg {
+    font-size: 2em;
+  }
+
+  .reviews h1 {
+    font-size: 2em;
+  }
+
+  .review {
+    height: 300px;
+  }
+
+  .slider-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
   #header-content {
     position: relative;
   }
@@ -897,5 +481,53 @@ img {
 
   #header-content nav a {
     font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content-container {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  .like-what-text h1 {
+    font-size: 1.8em;
+  }
+
+  .like-what-text p {
+    font-size: 1em;
+  }
+
+  .page-title .marker-bg {
+    font-size: 1.8em;
+    padding: 8px 20px;
+  }
+
+  .reviews h1 {
+    font-size: 1.6em;
+  }
+
+  .review {
+    height: 250px;
+  }
+
+  .slider-button {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .like-what-text h1 {
+    color: black;
+  }
+
+  .like-what-text p {
+    color: black;
   }
 }

@@ -54,81 +54,50 @@ body {
   overflow-x: hidden;
 }
 
-/* Contact Me Page Styles */
-.work-together,
-.what-you-get,
-.reviews-section,
+/* Contact Section Styles */
 .contact-me-section {
   padding: 40px 0;
+  min-height: calc(100vh - 200px); /* Account for header and footer */
+  display: flex;
+  align-items: center;
 }
 
 .contact-content {
   width: var(--container-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
+  max-width: 800px;
 }
 
-.contact-content.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.find-me-here {
+  background-color: var(--black);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.work-together-content,
-.work-together-image,
-.find-me-here,
-.faq-section {
-  max-width: 50%;
-  width: 50%;
-  flex: 1;
-  margin-bottom: 20px;
-}
-
-.work-together-content h1,
-.what-you-get h1 {
+.marker-bg {
   font-family: var(--title-font);
   font-size: var(--title-size);
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
-.work-together-content p,
-.what-you-get p {
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  color: var(--white);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.get-items {
+  color: var(--black);
+  background-image: url('../media/reviews-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  padding: 20px 0;
   display: flex;
-  justify-content: space-around;
-  gap: 2em;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.get-items article {
-  flex: 1;
-}
-
-.find-me-here ul,
-.faq-section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.find-me-here ul {
+  list-style: none;
+  margin-bottom: 30px;
 }
 
 .find-me-here li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px; /* Adjust spacing as needed */
+  margin-bottom: 15px;
 }
 
 .find-me-here li a {
@@ -138,18 +107,23 @@ body {
   font-size: var(--body-size);
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.find-me-here li a:hover {
+  color: #666;
 }
 
 .find-me-here li a::before {
   content: '';
   display: inline-block;
-  width: 20px; /* Adjust size as needed */
-  height: 20px; /* Adjust size as needed */
-  margin-right: 10px; /* Space between icon and text */
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: invert(1); /* To make icons white */
+  filter: invert(1);
 }
 
 .find-me-here li:nth-child(1) a::before {
@@ -164,221 +138,17 @@ body {
   background-image: url('../media/instagram-icon.svg');
 }
 
-section.reviews {
-  margin-top: 20px;
-  background-color: transparent;
-  overflow: hidden;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  padding-top: 100px;
-}
-
-.reviews h1 {
-  font-family: var(--title-font);
-  font-size: var(--title-size);
-  color: var(--black);
-  z-index: 3;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.reviews p {
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  color: var(--white);
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 20px;
-  z-index: 2;
-  position: relative;
-}
-
-.reviews p a {
-  color: var(--white);
-  text-decoration: underline;
-  font-family: var(--title-font);
-}
-
-.reviews > img, .what-you-get img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  z-index: 1;
-  display: block;
-}
-
-.reviews-slider {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 20px 0;
-  z-index: 2;
-}
-
-.reviews-grid {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.review {
-  flex: 0 0 100%;
-  height: 500px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.review img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  max-width: 600px;
-}
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.slider-button.prev {
-  left: 10px;
-}
-
-.slider-button.next {
-  right: 10px;
-}
-
-.reviews-section .review-images {
-  display: flex;
-  justify-content: space-around; 
-  gap: 1em; 
-  margin-top: 20px;
-}
-
-.reviews-section .review-images img {
-    max-width: 100%;
-    height: auto;
-    display: block; 
-}
-
-.reviews-section .review-images {
-  flex-direction: column;
-  align-items: center;
-}
-
-.reviews-section .review-images img {
-  margin-bottom: 10px; 
-}
-
-.find-me-here .marker-bg,
-.faq-section .marker-bg {
-    position: static;
-    width: auto;
-    height: auto;
-    text-align: center;
-    background-image: url('../media/reviews-bg.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 10px 30px;
-    background-position: center;
-    color: var(--black);
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.find-me-here,
-.faq-section {
-  max-width: 100%;
-  width: 100%;
-  text-align: left;
-}
-
-.faq-section h3 {
-    font-family: var(--body-font); 
-    font-size: var(--body-size);
-    color: var(--white);
-    margin-bottom: 5px;
-}
-
-/* Original marker-bg styles for What Do You Get? and FAQ */
-.marker-bg {
-  font-family: var(--title-font);
-  font-size: var(--title-size);
-  color: var(--black);
-  background-image: url('../media/reviews-bg.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  /* Inspired by reviews background image styling */
-  position: relative; /* Position relative to its normal flow */
-  display: flex; /* Use flex to center content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  height: 100px; /* Match the height of the reviews background image */
-  width: fit-content; /* Adjust width to fit content */
-  padding: 10px 30px; /* Keep existing padding */
-  margin: 0 auto 20px auto; /* Center the block and add bottom margin */
-}
-
-/* Style for the image within the centered contact content (What Do You Get?) */
-.contact-content.centered > img {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  z-index: 0;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Booking Form Styles */
-.booking-form {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
+/* Form Styles */
 .form-sec {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
+  gap: 20px;
 }
 
 .form-sec label {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-family: var(--body-font);
   font-size: var(--body-size);
   color: var(--white);
@@ -386,375 +156,68 @@ section.reviews {
 
 .form-sec input,
 .form-sec textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--white);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   font-family: var(--body-font);
   font-size: var(--body-size);
-  transition: all 0.3s ease;
 }
 
 .form-sec textarea {
   resize: vertical;
-  min-height: 80px;
-}
-
-.form-sec input:focus,
-.form-sec textarea:focus {
-  outline: none;
-  border-color: var(--white);
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.form-sec input::placeholder,
-.form-sec textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  min-height: 100px;
 }
 
 .form-sec button {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--white);
-  color: var(--black);
+  background-image: url('../media/buttons-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
   border: none;
-  font-family: var(--body-font);
-  font-size: var(--button-size);
+  padding: 10px 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  background-color: transparent;
+  transition: scale 0.3s ease-in-out;
+  font-family: var(--title-font);
+  font-size: var(--button-size);
+  color: var(--black);
+  align-self: flex-start;
   margin-top: 10px;
 }
 
 .form-sec button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
+  scale: 1.1;
 }
 
-/* Responsive styles for the booking form */
-@media screen and (max-width: 991px) {
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
+/* Responsive Styles */
 @media screen and (max-width: 767px) {
-  .form-sec {
-    padding: 0;
+  .contact-content {
+    width: 90%;
   }
 
-  .form-sec input,
-  .form-sec textarea {
-    padding: 8px;
+  .find-me-here {
+    padding: 20px;
+  }
+
+  .marker-bg {
+    font-size: 2em;
   }
 
   .form-sec button {
-    padding: 10px;
-  }
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-  .contact-content {
-    width: 90%;
-  }
-
-  .contact-content img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .work-together-content {
-    width: 90%;
-  }
-
-  .work-together-content img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .contact-content {
-    width: 90%;
-    gap: 2em;
-  }
-
-  .work-together-content,
-  .work-together-image,
-  .find-me-here,
-  .faq-section {
-    max-width: 45%;
-  }
-
-  .work-together-content h1,
-  .what-you-get h1 {
-    font-size: 2.2em;
-  }
-
-  .work-together-content p,
-  .what-you-get p {
-    font-size: 1.1em;
-  }
-
-  .get-items {
-    gap: 1.5em;
-  }
-
-  .get-items article h1 {
-    font-size: 1.8em;
-  }
-
-  .get-items article p {
-    font-size: 1em;
-  }
-
-  .find-me-here .marker-bg,
-  .faq-section .marker-bg {
-    font-size: 2em;
-    padding: 8px 25px;
-    height: 80px; /* Adjust height for smaller screens */
-  }
-
-  .reviews h1 {
-    font-size: 2.2em;
-  }
-
-  .review {
-    height: 450px;
-  }
-
-  .review img {
-    max-width: 90%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .contact-content,
-  .work-together-content {
-    flex-direction: column;
+    width: 100%;
     text-align: center;
-    gap: 2em;
-    padding: 0 1em; /* Add padding for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .find-me-here {
+    padding: 15px;
   }
 
-  .work-together-content,
-  .work-together-image,
-  .find-me-here,
-  .faq-section {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .work-together-content h1,
-  .what-you-get h1 {
-    font-size: 2em;
-  }
-
-  .work-together-content p,
-  .what-you-get p {
-    font-size: 1.1em;
-  }
-
-  .get-items {
-    flex-direction: column;
-    gap: 2em;
-  }
-
-  .get-items article {
-    width: 100%;
-  }
-
-  .get-items article h1 {
+  .marker-bg {
     font-size: 1.8em;
   }
 
-  .get-items article p {
+  .find-me-here li a {
     font-size: 1em;
-  }
-
-  .find-me-here li,
-  .faq-section li {
-    margin-bottom: 1em;
-  }
-
-  .faq-section h3 {
-    font-size: 1.1em;
-    margin-bottom: 0.5em;
-  }
-
-  .faq-section p {
-    font-size: 0.9em;
-  }
-
-  .reviews h1 {
-    font-size: 2em;
-  }
-
-  .review {
-    height: 400px;
-  }
-
-
-  .find-me-here .marker-bg,
-  .faq-section .marker-bg {
-    padding: 8px 25px;
-    font-size: 1.8em;
-    height: 70px; /* Adjust height for mobile */
-  }
-}
-
-/* Extra small screens (up to 480px) */
-@media (max-width: 480px) {
-  .contact-content,
-  .work-together-content {
-    padding: 0 0.5em;
-  }
-
-  .contact-info h1,
-  .work-together-text h1 {
-    font-size: 1.8em;
-  }
-
-  .contact-info p,
-  .work-together-text p {
-    font-size: 1em;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1em;
-  }
-
-  .get-items article h1 {
-    font-size: 1.4em;
-  }
-
-  .get-items article p {
-    font-size: 0.9em;
-  }
-
-  .find-me-here li,
-  .faq-section li {
-    margin-bottom: 0.8em;
-  }
-
-  .faq-section h3 {
-    font-size: 1em;
-  }
-
-  .faq-section p {
-    font-size: 0.8em;
-  }
-
-  .reviews h1 {
-    font-size: 1.8em;
-  }
-
-  .review {
-    height: 350px;
-  }
-
-  .slider-button {
-    width: 25px;
-    height: 25px;
-    font-size: 14px;
-  }
-
-  .find-me-here .marker-bg,
-  .faq-section .marker-bg {
-    padding: 6px 20px;
-    font-size: 1.6em;
-    height: 60px; /* Adjust height for extra small screens */
-  }
-}
-
-/* Print styles */
-@media print {
-  body {
-    background-color: white;
-  }
-
-  .contact-content {
-    width: 100%;
-  }
-
-  .contact-info,
-  .work-together-text {
-    width: 100%;
-    margin-bottom: 2em;
-  }
-
-  .contact-info h1 {
-    color: black;
-  }
-
-  .contact-info p {
-    color: black;
-  }
-}
-
-/* Responsive styles for reviews section */
-@media (max-width: 768px) {
-  .reviews h1 {
-    font-size: calc(var(--title-size) * 0.8);
-  }
-
-  .review {
-    height: 400px;
-  }
-
-  .review img {
-    max-width: 100%;
-  }
-
-  .slider-button {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-  }
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-  .content-container {
-    width: 90%;
-  }
-
-  .like-what-buttons img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-
-  #header-content {
-    position: relative;
-  }
-
-  #header-content nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    transition: right 0.3s ease-in-out;
-    z-index: 999;
-  }
-
-  #header-content nav.active {
-    right: 0;
-  }
-
-  #header-content nav a {
-    font-size: 1.5em;
   }
 }
