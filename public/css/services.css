@@ -126,6 +126,52 @@ body {
   border-radius: 8px;
 }
 
+.find-me-here ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.find-me-here li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
+.find-me-here li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  display: flex;
+  align-items: center;
+}
+
+.find-me-here li a::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 10px; /* Space between icon and text */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1); /* To make icons white */
+}
+
+.find-me-here li:nth-child(1) a::before {
+  background-image: url('../media/phone-icon.svg'); 
+}
+
+.find-me-here li:nth-child(2) a::before {
+  background-image: url('../media/email-icon.svg'); 
+}
+
+.find-me-here li:nth-child(3) a::before {
+  background-image: url('../media/instagram-icon.svg'); 
+}
+
+
 section.reviews {
   margin-top: 20px;
   background-color: transparent;
@@ -313,10 +359,6 @@ section.reviews {
     font-size: 16px;
   }
 
-  .burger-menu {
-    display: flex;
-  }
-
   #header-content {
     position: relative;
   }
@@ -392,46 +434,3 @@ section.reviews {
     color: black;
   }
 }
-
-/* Burger Menu Styles */
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensure the image fits within the container */
-}
-
-.burger-menu.active img {
-  /* Add any styles needed for the active state of the image, if any */
-}
-
-/* Removed .burger-menu div styles */
-/*
-.burger-menu div {
-  width: 100%;
-  height: 3px;
-  background-color: var(--white);
-  transition: all 0.3s ease-in-out;
-}
-
-.burger-menu.active div:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.burger-menu.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active div:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-*/ 

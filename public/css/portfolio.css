@@ -265,20 +265,6 @@ section.portfolio {
   padding: 20px;
   width: 100%;
 }
-
-/* .gallery-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-gap: 10px;
-padding: 20px;
-}
-.gallery-photo {
-width: 100%;
-height: auto;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-} */
-
 /* Responsive Styles */
 /* Large screens (1200px and up) */
 @media (min-width: 1200px) {
@@ -509,29 +495,7 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   }
 }
 
-/* Burger Menu Styles */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu img {
-  width: 30px; /* Set the desired width for the image icon */
-  height: 21px; /* Set the desired height for the image icon */
-  object-fit: contain; /* Ensure the image fits within the container */
-  /* Add any other necessary styling like margin, padding */
-}
-
-.burger-menu.active img {
-  /* Add any styles needed for the active state of the image, if any */
-}
-
 @media screen and (max-width: 767px) {
-  .burger-menu {
-    display: flex;
-  }
-
   #header-content {
     position: relative;
   }

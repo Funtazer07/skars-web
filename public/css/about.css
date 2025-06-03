@@ -66,8 +66,9 @@ body {
   width: var(--container-width);
   margin: 0 auto;
   display: flex;
-  gap: 3em;
+  gap: 5em;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .about-content.centered {
@@ -396,9 +397,6 @@ img {
     font-size: 0.9em;
   }
 
-  .burger-menu {
-    display: flex;
-  }
 
   #header-content nav {
     position: fixed;
@@ -741,7 +739,7 @@ img {
   .interested .about-content {
     flex-direction: column;
     text-align: center;
-    gap: 2em;
+    gap: 3em;
   }
 
   .interested-content {
@@ -810,28 +808,70 @@ img {
   }
 }
 
+/* Styles for Find Me Here section with icons */
+.find-me-here ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.find-me-here li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
+.find-me-here li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  display: flex;
+  align-items: center;
+}
+
+.find-me-here li a::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 10px; /* Space between icon and text */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1); /* To make icons white */
+}
+
+.find-me-here li:nth-child(1) a::before {
+  background-image: url('../media/phone-icon.svg'); 
+}
+
+.find-me-here li:nth-child(2) a::before {
+  background-image: url('../media/email-icon.svg'); 
+}
+
+.find-me-here li:nth-child(3) a::before {
+  background-image: url('../media/instagram-icon.svg'); 
+}
+
+
+/* Styles for FAQ section */
+.faq-section h3 {
+  color: var(--white);
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  background-image: url('../media/reviews-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-bottom: 20px; /* Add some margin below the h3 */
+}
+
 /* Burger Menu Styles */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu img {
-  width: 30px;
-  height: 21px;
-  object-fit: contain;
-}
-
-.burger-menu.active img {
-  /* Add any styles needed for the active state of the image, if any */
-}
 
 @media screen and (max-width: 767px) {
-  .burger-menu {
-    display: flex;
-  }
-
   #header-content {
     position: relative;
   }
@@ -858,4 +898,4 @@ img {
   #header-content nav a {
     font-size: 1.5em;
   }
-} 
+}

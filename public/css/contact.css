@@ -65,12 +65,14 @@ body {
 .contact-content {
   width: var(--container-width);
   margin: 0 auto;
-  display: flex;
-  gap: 3em;
-  align-items: center; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .contact-content.centered {
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -118,6 +120,48 @@ body {
 .faq-section ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.find-me-here li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
+.find-me-here li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  display: flex;
+  align-items: center;
+}
+
+.find-me-here li a::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 10px; /* Space between icon and text */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1); /* To make icons white */
+}
+
+.find-me-here li:nth-child(1) a::before {
+  background-image: url('../media/phone-icon.svg');
+}
+
+.find-me-here li:nth-child(2) a::before {
+  background-image: url('../media/email-icon.svg');
+}
+
+.find-me-here li:nth-child(3) a::before {
+  background-image: url('../media/instagram-icon.svg');
 }
 
 section.reviews {
@@ -271,23 +315,13 @@ section.reviews {
     color: var(--black);
     display: inline-block;
     margin-bottom: 20px;
-    white-space: nowrap;
 }
 
 .find-me-here,
 .faq-section {
   max-width: 100%;
   width: 100%;
-  text-align: center;
-}
-
-.find-me-here li,
-.faq-section li {
-    font-family: var(--body-font);
-    font-size: var(--body-size);
-    color: var(--white);
-    margin-bottom: 15px;
-    line-height: 1.6;
+  text-align: left;
 }
 
 .faq-section h3 {
@@ -315,7 +349,6 @@ section.reviews {
   width: fit-content; /* Adjust width to fit content */
   padding: 10px 30px; /* Keep existing padding */
   margin: 0 auto 20px auto; /* Center the block and add bottom margin */
-  white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Style for the image within the centered contact content (What Do You Get?) */
@@ -326,6 +359,100 @@ section.reviews {
   z-index: 0;
   display: block;
   margin: 0 auto;
+}
+
+/* Booking Form Styles */
+.booking-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-sec {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.form-sec label {
+  display: block;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  color: var(--white);
+}
+
+.form-sec input,
+.form-sec textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  transition: all 0.3s ease;
+}
+
+.form-sec textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-sec input:focus,
+.form-sec textarea:focus {
+  outline: none;
+  border-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-sec input::placeholder,
+.form-sec textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-sec button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  font-family: var(--body-font);
+  font-size: var(--button-size);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-sec button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles for the booking form */
+@media screen and (max-width: 991px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-sec {
+    padding: 0;
+  }
+
+  .form-sec input,
+  .form-sec textarea {
+    padding: 8px;
+  }
+
+  .form-sec button {
+    padding: 10px;
+  }
 }
 
 /* Responsive Styles */
@@ -410,6 +537,7 @@ section.reviews {
     flex-direction: column;
     text-align: center;
     gap: 2em;
+    padding: 0 1em; /* Add padding for smaller screens */
   }
 
   .work-together-content,
@@ -469,14 +597,6 @@ section.reviews {
     height: 400px;
   }
 
-  .burger-menu {
-    display: flex;
-    margin: 0;
-    position: static;
-    width: 30px;
-    height: 21px;
-    flex-shrink: 0;
-  }
 
   .find-me-here .marker-bg,
   .faq-section .marker-bg {
@@ -609,27 +729,7 @@ section.reviews {
   }
 }
 
-/* Burger Menu Styles */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu img {
-  width: 30px;
-  height: 21px;
-  object-fit: contain;
-}
-
-.burger-menu.active img {
-  /* Add any styles needed for the active state of the image, if any */
-}
-
 @media screen and (max-width: 767px) {
-  .burger-menu {
-    display: flex;
-  }
 
   #header-content {
     position: relative;

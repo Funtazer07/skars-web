@@ -53,7 +53,9 @@ function createLightbox() {
         <button class="lightbox-close">&times;</button>
         <button class="lightbox-prev">❮</button>
         <button class="lightbox-next">❯</button>
-        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="">
+        </div>
     `;
     document.body.appendChild(elements.lightbox);
 
@@ -123,8 +125,18 @@ function renderGallery(photos, page) {
     }
 
     photos.forEach((photo, index) => {
-        const imgContainer = document.createElement('div');
-        imgContainer.className = 'image-container';
+        const figure = document.createElement('figure');
+        
+        // Add size classes for chaotic layout
+        if (index % 3 === 0) {
+            figure.classList.add('tall');
+        } else if (index % 5 === 0) {
+            figure.classList.add('wide');
+        } else if (index % 7 === 0) {
+            figure.classList.add('tall', 'wide');
+        } else if (index % 11 === 0) {
+            figure.classList.add('tall');
+        }
         
         const img = document.createElement('img');
         // Add Cloudinary transformation parameters for thumbnail with less aggressive compression
@@ -134,25 +146,28 @@ function renderGallery(photos, page) {
         img.loading = 'lazy';
         img.dataset.index = index;
         img.dataset.fullsize = photo.url; // Store the original URL
-        
+                
         // Add loading state
         img.addEventListener('load', () => {
-            imgContainer.classList.add('loaded');
+            figure.classList.add('loaded');
         });
 
         // Add error handling
         img.addEventListener('error', () => {
-            imgContainer.innerHTML = '<div class="image-error">Failed to load image</div>';
+            figure.innerHTML = '<div class="image-error">Failed to load image</div>';
         });
 
-        imgContainer.appendChild(img);
-        elements.gridContainer.appendChild(imgContainer);
+        figure.appendChild(img);
+        elements.gridContainer.appendChild(figure);
     });
 }
 
 // Handle image click for lightbox
 function handleImageClick(e) {
-    const img = e.target.closest('img');
+    const figure = e.target.closest('figure');
+    if (!figure) return;
+
+    const img = figure.querySelector('img');
     if (!img) return;
 
     const images = Array.from(elements.gridContainer.querySelectorAll('img'));
@@ -164,7 +179,9 @@ function handleImageClick(e) {
 
 // Lightbox functions
 function showLightbox(src, index) {
-    elements.lightboxImage.src = src;
+    // Add Cloudinary transformation parameters for lightbox image
+    const lightboxUrl = src.replace('/upload/', '/upload/c_scale,w_1200,q_auto,f_auto/');
+    elements.lightboxImage.src = lightboxUrl;
     elements.lightboxImage.dataset.index = index;
     elements.lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';

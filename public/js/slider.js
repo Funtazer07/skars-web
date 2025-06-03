@@ -4,33 +4,48 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextButton = document.querySelector('.slider-button.next');
   const slides = document.querySelectorAll('.review');
   
+  if (!slider || !prevButton || !nextButton || slides.length === 0) return;
+  
   let currentPosition = 0;
   let slideWidth = slider.offsetWidth;
   let autoSlideInterval;
-  const autoSlideDelay = 3000; // 3 seconds between slides
+  const autoSlideDelay = 5000; // 5 seconds between slides
+  let isAnimating = false;
   
   function updateSlider() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
     slider.style.transform = `translateX(${currentPosition}px)`;
+    
+    // Reset animation flag after transition
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500); // Match the CSS transition duration
   }
   
   function slideNext() {
+    if (isAnimating) return;
+    
     const maxPosition = -(slideWidth * (slides.length - 1));
     if (currentPosition > maxPosition) {
       currentPosition -= slideWidth;
       updateSlider();
     } else {
-      // Reset to first slide
+      // Smoothly reset to first slide
       currentPosition = 0;
       updateSlider();
     }
   }
   
   function slidePrev() {
+    if (isAnimating) return;
+    
     if (currentPosition < 0) {
       currentPosition += slideWidth;
       updateSlider();
     } else {
-      // Go to last slide
+      // Smoothly go to last slide
       currentPosition = -(slideWidth * (slides.length - 1));
       updateSlider();
     }
@@ -76,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
   let touchStartX = 0;
   let touchEndX = 0;
   
-  slider.addEventListener('touchstart', e => {
+  slider.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
     stopAutoSlide();
   });
   
-  slider.addEventListener('touchend', e => {
+  slider.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
     startAutoSlide();
@@ -89,27 +104,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function handleSwipe() {
     const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      slideNext();
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      slidePrev();
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        slideNext();
+      } else {
+        slidePrev();
+      }
     }
   }
   
-  // Pause auto-slide when hovering over the slider
+  // Pause auto-slide on hover
   slider.addEventListener('mouseenter', stopAutoSlide);
   slider.addEventListener('mouseleave', startAutoSlide);
   
   // Handle window resize
-  let resizeTimeout;
   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      updateSlideWidth();
-    }, 250);
+    updateSlideWidth();
   });
   
-  // Start auto-sliding
+  // Start auto-slide
   startAutoSlide();
 });

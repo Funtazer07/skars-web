@@ -62,10 +62,6 @@ header {
   object-fit: contain; /* Ensure the image fits within the container */
 }
 
-.burger-menu.active img {
-  /* Add any styles needed for the active state of the image, if any */
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 991px) {
   #header-content {
