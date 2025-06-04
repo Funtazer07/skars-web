@@ -1,6 +1,4 @@
 const express = require('express');
-const session = require('express-session');
-const bcrypt = require('bcrypt');
 const path = require('path');
 require('dotenv').config();
 
@@ -15,13 +13,6 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-app.use('/admin', express.static('admin'));
-
-app.use(session({
-  secret: 'secret-key',
-  resave: false,
-  saveUninitialized: true,
-}));
 
 // API routes must come before static file serving
 app.use('/api/upload', uploadRoutes);
@@ -45,23 +36,6 @@ app.get('/portraits', (req, res) => {
 
 app.get('/nightlife', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'nightlife.html'));
-});
-
-// Fake login
-const ADMIN = {
-  username: 'admin',
-  password: '1234'
-};
-
-// Login route
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  const valid = username === ADMIN.username && password === ADMIN.password;
-  if (valid) {
-    req.session.user = username;
-    return res.redirect('/admin/dashboard.html');
-  }
-  res.status(401).send('Unauthorized');
 });
 
 // Error handling middleware

@@ -91,23 +91,22 @@ section.portfolio {
 
 #portfolio-elements figure {
   position: relative;
-  width: 100%; /* Allow items to take full grid cell width */
-  max-width: 350px; /* Max width for smaller items */
-  height: 250px;
+  width: 300px; /* Set fixed width */
+  height: 300px; /* Set fixed height */
   overflow: visible;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0; /* Remove individual margin-bottom */
+  margin-bottom: 0;
   transition: transform 0.3s ease;
 }
 
 #portfolio-elements figure:nth-child(2) { /* Nightlife */
-  grid-column: 1 / -1; /* Span across all columns in the first row */
+  grid-column: 1 / -1;
   grid-row: 1;
-  max-width: 450px; /* Max width for the larger item */
-  height: 350px;
+  max-width: 300px; /* Adjust max-width to match fixed width */
+  height: 300px; /* Adjust height to match fixed height */
   align-self: center;
-  justify-self: center; /* Ensure the single item in the first row is centered */
+  justify-self: center;
 }
 
 #portfolio-elements figure:nth-child(1) { /* Festivals */
@@ -133,7 +132,7 @@ section.portfolio {
 #portfolio-elements figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure image covers the square area */
   transition: transform 0.5s ease;
   transform-origin: center;
 }
@@ -377,38 +376,34 @@ section.portfolio {
   }
 
   #portfolio-elements {
-    gap: 30px; /* Keep tablet gap */
-    grid-template-columns: 1fr; /* Single column */
-    justify-items: center;
+    margin-block: 2em; /* Adjust margin for smaller screens */
+    grid-template-columns: 1fr; /* Stack items on smaller screens */
+    gap: 20px; /* Adjust gap */
   }
 
   #portfolio-elements figure {
-    max-width: 300px;
-    height: 250px;
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Allow height to adjust based on aspect ratio */
+    max-width: 300px; /* Max width */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
   }
 
-  #portfolio-elements figure:nth-child(1), /* Festivals */
+  #portfolio-elements figure:nth-child(1) { /* Festivals */
+    grid-column: auto; /* Reset grid column */
+    grid-row: auto; /* Reset grid row */
+  }
+
   #portfolio-elements figure:nth-child(3) { /* Concerts */
-    /* Make these two wider on tablets */
-    max-width: 330px;
+    grid-column: auto; /* Reset grid column */
+    grid-row: auto; /* Reset grid row */
   }
 
   #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    grid-column: auto; /* Reset grid column span */
+    grid-column: auto; /* Reset grid column */
     grid-row: auto; /* Reset grid row */
-    max-width: 340px;
-    height: 300px;
-    justify-self: center;
-  }
-
-  #portfolio-elements figure:nth-child(1), /* Festivals */
-  #portfolio-elements figure:nth-child(3) { /* Concerts */
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  #portfolio-elements figure:nth-child(2) figcaption {
-     transform: translateX(-50%) scale(1.1);
+    max-width: 300px; /* Adjust max-width */
+    height: auto; /* Allow height to adjust */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
   }
 
   section.portfolio {
@@ -535,15 +530,16 @@ section.portfolio {
 
 @media screen and (max-width: 680px) {
   #portfolio-elements figure {
-    width: 280px;
-    height: 230px;
-    margin-bottom: 20px;
+    width: 95%; /* Adjust width for very small screens */
+    height: auto;
+    max-width: 250px;
+    aspect-ratio: 1 / 1;
   }
 
   #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    width: 300px;
-    height: 270px;
-    margin-bottom: 20px;
+    max-width: 250px; /* Adjust max-width */
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
@@ -553,18 +549,16 @@ section.portfolio {
   }
 
   #portfolio-elements figure {
-    max-width: 280px; /* Keep this size for all */
-    height: 230px; /* Keep this size for all */
+    width: 100%; /* Adjust width for even smaller screens */
+    height: auto;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
   }
 
   #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    /* Make the Nightlife figure the same size as others on phones */
-    max-width: 280px;
-    height: 230px;
-    /* Ensure other mobile specific styles are kept */
-    grid-column: auto;
-    grid-row: auto;
-    justify-self: center;
+    max-width: 200px; /* Adjust max-width */
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   #portfolio-elements figure:nth-child(1), /* Festivals */

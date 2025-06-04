@@ -1,8 +1,8 @@
 /* Footer styles */
 footer {
-  background-image: url('../media/footer-bg.png');
+  background-image: url('../media/footer_background.png');
   background-repeat: no-repeat;
-  background-size: 268vw 36vh;
+  background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: row;
@@ -35,7 +35,7 @@ footer img {
 /* Footer Responsive Styles */
 @media screen and (max-width: 991px) {
   footer {
-    background-size: 200% 100%;
+    background-size: cover;
     padding: 3em 1em;
     gap: 2em;
   }
@@ -63,7 +63,7 @@ footer img {
     align-items: center;
     height: auto;
     padding: 2em 1em;
-    background-size: 200% 100%;
+    background-size: cover;
   }
 
   footer ul {
@@ -79,6 +79,7 @@ footer img {
 @media screen and (max-width: 480px) {
   footer {
     padding: 1.5em 0.5em;
+    background-size: cover;
   }
 
   footer ul {

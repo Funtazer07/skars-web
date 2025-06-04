@@ -164,12 +164,13 @@ body {
   width: var(--container-width);
   margin: 0 auto;
   display: flex;
-  gap: 3em;
+  gap: 2em;
   align-items: center;
+  justify-content: space-between;
 }
 
 .like-what-text {
-  flex: 1;
+  flex: 0 0 50%;
 }
 
 .like-what-text h1 {
@@ -187,8 +188,17 @@ body {
   line-height: 1.6;
 }
 
-.like-what-buttons img{
-  width: 100%;
+.like-what-buttons {
+  flex: 0 0 50%;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.like-what-buttons img {
+  width: 85%;
+  max-width: 100%;
+  height: auto;
 }
 
 #hero-button {
@@ -463,11 +473,11 @@ body {
   .content-container {
     flex-direction: column;
     gap: 20px;
-    text-align: center;
-    width: 90%;
   }
 
-  .like-what-text {
+  .like-what-text,
+  .like-what-buttons {
+    flex: 0 0 100%;
     width: 100%;
   }
 
@@ -482,7 +492,6 @@ body {
   .like-what-buttons {
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   #hero-button {
