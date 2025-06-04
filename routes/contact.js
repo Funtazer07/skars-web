@@ -4,11 +4,9 @@ const nodemailer = require('nodemailer');
 
 // Create a transporter using SMTP
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
+  host: 'localhost',  // or your SMTP server
+  port: 25,          // default SMTP port
+  secure: false      // true for 465, false for other ports
 });
 
 router.post('/contact', async (req, res) => {
@@ -17,8 +15,7 @@ router.post('/contact', async (req, res) => {
   try {
     // Email content
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'vassil@skarsphotography.com', // Your email address
+      to: 'andrey0711@inbox.lv', // Your email address
       subject: `New Contact Form Submission from ${name}`,
       text: `
         Name: ${name}
