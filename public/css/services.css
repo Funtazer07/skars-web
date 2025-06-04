@@ -84,19 +84,19 @@ body {
 }
 
 .work-together-image {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 400px;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .work-together-image img {
   width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: 400px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .work-together-content h1,
@@ -399,96 +399,11 @@ section.reviews {
   color: var(--white);
   margin-bottom: 5px;
 }
-/* Form Styles */
-.form-sec {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-}
-
-.form-sec label {
-  display: block;
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  color: var(--white);
-}
-
-.form-sec input,
-.form-sec textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--white);
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  transition: all 0.3s ease;
-}
-
-.form-sec textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-.form-sec input:focus,
-.form-sec textarea:focus {
-  outline: none;
-  border-color: var(--white);
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.form-sec input::placeholder,
-.form-sec textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.form-sec button {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--white);
-  color: var(--black);
-  border: none;
-  font-family: var(--body-font);
-  font-size: var(--button-size);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-}
-
-.form-sec button.beige {
-  background-image: url('../media/reviews-bg.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  color: var(--black);
-  font-family: var(--title-font);
-  padding: 15px 30px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-weight: normal;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-sec button.beige:hover {
-  transform: scale(1.05);
-}
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .contact-content {
+    flex-direction: column;
     width: 90%;
   }
 
@@ -518,7 +433,7 @@ section.reviews {
   .work-together-image,
   .find-me-here,
   .faq-section {
-    max-width: 45%;
+    max-width: 95%;
   }
 
   .work-together-content h1,
@@ -576,6 +491,13 @@ section.reviews {
     padding-right: 0;
   }
 
+  .work-together-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
   .work-together-content h1,
   .what-you-get h1 {
     font-size: 2em;
@@ -603,29 +525,41 @@ section.reviews {
     font-size: 1em;
   }
 
+  .find-me-here,
+  .faq-section {
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .find-me-here ul,
+  .faq-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
   .find-me-here li,
   .faq-section li {
-    margin-bottom: 1em;
-  }
-
-  .faq-section h3 {
-    font-size: 1.1em;
-    margin-bottom: 0.5em;
-  }
-
-  .faq-section p {
-    font-size: 0.9em;
-  }
-
-  .reviews h1 {
-    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
   }
 
   .find-me-here .marker-bg,
   .faq-section .marker-bg {
-    padding: 8px 25px;
-    font-size: 1.8em;
-    height: 70px;
+    padding: 8px 15px;
+    font-size: 1.6em;
+    height: auto;
+    background-size: 100% 100%;
+    width: auto;
+    display: inline-block;
+  }
+
+  .reviews h1 {
+    font-size: 2em;
   }
 
   .review {
@@ -654,20 +588,6 @@ section.reviews {
     height: 30px;
     font-size: 16px;
   }
-
-  .form-sec button {
-    width: 100%;
-    text-align: center;
-    align-self: center;
-  }
-
-  .work-together-image {
-    max-height: 300px;
-  }
-
-  .work-together-image img {
-    max-height: 300px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -694,17 +614,23 @@ section.reviews {
     font-size: 0.9em;
   }
 
+  .find-me-here,
+  .faq-section {
+    padding: 0 5px;
+  }
+
   .find-me-here li,
   .faq-section li {
-    margin-bottom: 0.8em;
+    max-width: 300px;
   }
 
-  .faq-section h3 {
-    font-size: 1em;
-  }
-
-  .faq-section p {
-    font-size: 0.8em;
+  .find-me-here .marker-bg,
+  .faq-section .marker-bg {
+    padding: 5px 10px;
+    font-size: 1.4em;
+    height: auto;
+    background-size: 100% 100%;
+    width: auto;
   }
 
   .reviews h1 {
@@ -715,13 +641,6 @@ section.reviews {
     width: 25px;
     height: 25px;
     font-size: 14px;
-  }
-
-  .find-me-here .marker-bg,
-  .faq-section .marker-bg {
-    padding: 6px 20px;
-    font-size: 1.6em;
-    height: 60px;
   }
 
   .review {
@@ -792,6 +711,7 @@ section.reviews {
   gap: 40px;
   max-width: 800px;
   margin: 0 auto;
+  flex-direction: row;
 }
 
 .find-me-here,
@@ -821,5 +741,6 @@ section.reviews {
   .contact-me-section .contact-content {
     width: 90%;
     gap: 30px;
+    flex-direction: column;
   }
 }

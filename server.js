@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // Import upload routes and cloudinary config
 const uploadRoutes = require('./routes/upload');
+const contactRoutes = require('./routes/contact');
 const { cloudinary } = require('./config/cloudinary');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.static('public'));
 
 // API routes must come before static file serving
 app.use('/api/upload', uploadRoutes);
+app.use('/api', contactRoutes);
 
 // Serve static files
 app.get('/', (req, res) => {

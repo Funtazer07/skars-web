@@ -32,9 +32,9 @@
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -54,7 +54,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Portfolio start */
+/* Portfolio Styles */
 section.portfolio {
   margin-block: 20px;
   background-color: transparent;
@@ -79,20 +79,20 @@ section.portfolio {
 #portfolio-elements {
   margin-block: 4em;
   display: grid;
-  grid-template-columns: 1fr repeat(2, auto) 1fr; /* Four columns: flexible side columns, auto-sized center columns for images */
-  grid-template-rows: auto auto; /* Two rows */
-  gap: 40px; /* Increased gap for more vertical space */
+  grid-template-columns: 1fr repeat(2, auto) 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
   width: var(--container-width);
   margin-inline: auto;
   position: relative;
-  justify-items: center; /* Center grid items within their cells */
+  justify-items: center;
   align-items: start;
 }
 
 #portfolio-elements figure {
   position: relative;
-  width: 300px; /* Set fixed width */
-  height: 300px; /* Set fixed height */
+  width: 300px;
+  height: 300px;
   overflow: visible;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -100,22 +100,22 @@ section.portfolio {
   transition: transform 0.3s ease;
 }
 
-#portfolio-elements figure:nth-child(2) { /* Nightlife */
+#portfolio-elements figure:nth-child(2) {
   grid-column: 1 / -1;
   grid-row: 1;
-  max-width: 300px; /* Adjust max-width to match fixed width */
-  height: 300px; /* Adjust height to match fixed height */
+  max-width: 300px;
+  height: 300px;
   align-self: center;
   justify-self: center;
 }
 
-#portfolio-elements figure:nth-child(1) { /* Festivals */
-  grid-column: 2; /* Place in the second column of the second row */
+#portfolio-elements figure:nth-child(1) {
+  grid-column: 2;
   grid-row: 2;
 }
 
-#portfolio-elements figure:nth-child(3) { /* Concerts */
-  grid-column: 3; /* Place in the third column of the second row */
+#portfolio-elements figure:nth-child(3) {
+  grid-column: 3;
   grid-row: 2;
 }
 
@@ -132,7 +132,7 @@ section.portfolio {
 #portfolio-elements figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure image covers the square area */
+  object-fit: cover;
   transition: transform 0.5s ease;
   transform-origin: center;
 }
@@ -167,12 +167,12 @@ section.portfolio {
   white-space: nowrap;
 }
 
-#portfolio-elements figcaption:hover  {
+#portfolio-elements figcaption:hover {
   transform: translateX(-50%) scale(1.1);
 }
-/* Portfolio end */
 
-.reviews>img {
+/* Reviews Section */
+.reviews > img {
   position: relative;
   width: 100%;
   height: 100px;
@@ -264,307 +264,120 @@ section.portfolio {
   padding: 20px;
   width: 100%;
 }
+
 /* Responsive Styles */
-/* Large screens (1200px and up) */
-@media (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .portfolio-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%;
   }
-
+  
   .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
+    gap: 30px;
   }
-
+  
   .portfolio-item {
-    height: 400px;
+    width: calc(50% - 15px);
   }
 }
 
-/* Medium screens (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .portfolio-container {
-    max-width: 960px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em;
-  }
-
-  .portfolio-item {
-    height: 350px;
+@media screen and (max-width: 1000px) {
+  #portfolio-elements figure:nth-child(2) {
+    grid-column: 2 / span 2;
+    max-width: 300px;
   }
 }
 
-/* Small screens (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .portfolio-container {
-    max-width: 720px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5em;
-  }
-
-  .portfolio-item {
-    height: 300px;
-  }
-}
-
-/* Mobile screens (up to 767px) */
 @media screen and (max-width: 767px) {
-  .portfolio-container {
-    padding: 20px;
+  .portfolio h1 {
+    width: 80vw;
+    height: 60px;
+    font-size: 2em;
+    background-size: 100%;
   }
-
-  .portfolio-grid {
+  
+  #portfolio-elements {
     grid-template-columns: 1fr;
-    gap: 30px; /* Keep tablet gap */
+    gap: 60px;
+    width: 90%;
   }
-
-  .portfolio-item {
+  
+  #portfolio-elements figure {
+    width: 250px;
     height: 250px;
   }
-
-  .portfolio-item img {
-    object-fit: cover;
+  
+  #portfolio-elements figure:nth-child(1),
+  #portfolio-elements figure:nth-child(3) {
+    grid-column: 1;
   }
-
-  .portfolio-item:hover .overlay {
-    opacity: 0.8;
-  }
-
-  .portfolio-item:hover .overlay-content {
-    transform: translateY(0);
-  }
-
-  .overlay-content h3 {
-    font-size: 1.5em;
-  }
-
-  .overlay-content p {
-    font-size: 1em;
-  }
-
-  .overlay-content a {
-    font-size: 0.9em;
-    padding: 8px 15px;
-  }
-
-  /* Fix for portfolio title background */
-  .portfolio h1 {
-    font-size: 2.5em;
-    padding: 0.2em 0.5em;
-    background-size: 100% 100%;
-    white-space: nowrap;
-    width: 100%;
-    margin-inline: auto;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .portfolio h1#black {
-    background-image: url('../media/reviews-bg.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    display: inline-block;
-    margin: 0 auto;
-  }
-
-  #portfolio-elements {
-    margin-block: 2em; /* Adjust margin for smaller screens */
-    grid-template-columns: 1fr; /* Stack items on smaller screens */
-    gap: 20px; /* Adjust gap */
-  }
-
-  #portfolio-elements figure {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Allow height to adjust based on aspect ratio */
-    max-width: 300px; /* Max width */
-    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
-  }
-
-  #portfolio-elements figure:nth-child(1) { /* Festivals */
-    grid-column: auto; /* Reset grid column */
-    grid-row: auto; /* Reset grid row */
-  }
-
-  #portfolio-elements figure:nth-child(3) { /* Concerts */
-    grid-column: auto; /* Reset grid column */
-    grid-row: auto; /* Reset grid row */
-  }
-
-  #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    grid-column: auto; /* Reset grid column */
-    grid-row: auto; /* Reset grid row */
-    max-width: 300px; /* Adjust max-width */
-    height: auto; /* Allow height to adjust */
-    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
-  }
-
-  section.portfolio {
-    margin-block: 20px;
-  }
-
-  #portfolio-elements {
-    margin-block: 3em;
-  }
-}
-
-/* Extra small screens (up to 480px) */
-@media (max-width: 480px) {
-  .portfolio-container {
-    padding: 15px;
-  }
-
-  .portfolio-item {
-    height: 200px;
-  }
-
-  .overlay-content h3 {
-    font-size: 1.3em;
-  }
-
-  .overlay-content p {
-    font-size: 0.9em;
-  }
-
-  .overlay-content a {
-    font-size: 0.8em;
-    padding: 6px 12px;
-  }
-
-  .portfolio h1 {
-    font-size: 2em;
-    padding: 0.15em 0.4em;
-    width: 100%;
-    margin-inline: auto;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  #portfolio-elements {
-    gap: 15px; /* Keep mobile gap */
-  }
-
-  #portfolio-elements figure {
-    max-width: 280px;
-    height: 230px;
-  }
-
-  #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    max-width: 300px;
-    height: 270px;
-  }
-
-  section.portfolio {
-    margin-block: 15px;
-  }
-}
-
-/* Print styles */
-@media print {
-  .portfolio-container {
-    display: block;
-  }
-
-  .portfolio-grid {
-    display: block;
-  }
-
-  .portfolio-item {
-    break-inside: avoid;
-    margin-bottom: 2em;
-  }
-
-  .overlay {
-    display: none;
-  }
-
-  .portfolio-item img {
-    filter: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #header-content {
-    position: relative;
-  }
-
-  #header-content nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    transition: right 0.3s ease-in-out;
-    z-index: 999;
-  }
-
-  #header-content nav.active {
-    right: 0;
-  }
-
-  #header-content nav a {
-    font-size: 1.5em;
-  }
-}
-
-/* Portfolio start */
-
-@media screen and (max-width: 1000px) and (min-width: 768px) {
-   #portfolio-elements figure:nth-child(2) {
-    width: 360px;
-    height: 310px;
+  
+  #portfolio-elements figure:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 
 @media screen and (max-width: 680px) {
   #portfolio-elements figure {
-    width: 95%; /* Adjust width for very small screens */
-    height: auto;
-    max-width: 250px;
-    aspect-ratio: 1 / 1;
+    width: 220px;
+    height: 220px;
   }
-
-  #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    max-width: 250px; /* Adjust max-width */
-    height: auto;
-    aspect-ratio: 1 / 1;
+  
+  #portfolio-elements figure:nth-child(2) {
+    width: 220px;
+    height: 220px;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .portfolio h1 {
+    width: 90vw;
+    height: 50px;
+    font-size: 1.8em;
+  }
+  
   #portfolio-elements {
-    gap: 15px; /* Keep mobile gap */
+    gap: 40px;
   }
-
+  
   #portfolio-elements figure {
-    width: 100%; /* Adjust width for even smaller screens */
-    height: auto;
-    max-width: 200px;
-    aspect-ratio: 1 / 1;
+    width: 200px;
+    height: 200px;
   }
-
-  #portfolio-elements figure:nth-child(2) { /* Nightlife */
-    max-width: 200px; /* Adjust max-width */
-    height: auto;
-    aspect-ratio: 1 / 1;
+  
+  #portfolio-elements figure:nth-child(2) {
+    width: 200px;
+    height: 200px;
   }
+  
+  #portfolio-elements figure:nth-child(1),
+  #portfolio-elements figure:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
 
-  #portfolio-elements figure:nth-child(1), /* Festivals */
-  #portfolio-elements figure:nth-child(3) { /* Concerts */
-     grid-column: auto;
-     grid-row: auto;
+/* Print Styles */
+@media print {
+  .portfolio-container {
+    width: 100%;
+  }
+  
+  .portfolio-grid {
+    display: block;
+  }
+  
+  .portfolio-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .overlay {
+    display: none;
+  }
+  
+  .portfolio-item img {
+    filter: none;
   }
 }
 
