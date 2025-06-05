@@ -47,7 +47,7 @@ header {
 
 /* Burger Menu Styles */
 .burger-menu {
-  display: none;
+  display: none; /* Hidden by default */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -84,7 +84,7 @@ header {
 
 @media screen and (max-width: 767px) {
   .burger-menu {
-    display: flex;
+    display: flex; /* Only show on mobile */
     margin: 0;
     position: static;
     width: 37px;
@@ -103,6 +103,7 @@ header {
   }
 
   #header-content nav {
+    display: none; /* Hide nav by default on mobile */
     position: fixed;
     top: 0;
     right: -100%;
@@ -118,6 +119,7 @@ header {
   }
 
   #header-content nav.active {
+    display: flex; /* Show nav when active */
     right: 0;
   }
 

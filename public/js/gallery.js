@@ -186,21 +186,23 @@ function showLightbox(src, index) {
     elements.lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
     
-    // Hide the burger menu
-    const burgerMenu = document.querySelector('.burger-menu');
-    if (burgerMenu) {
-        burgerMenu.style.display = 'none';
+    // Hide back arrow when lightbox is open
+    const backArrow = document.querySelector('.back-arrow');
+    if (backArrow) {
+        backArrow.style.pointerEvents = 'none';
+        backArrow.style.opacity = '0';
     }
 }
 
 function closeLightbox() {
     elements.lightbox.classList.remove('active');
     document.body.style.overflow = '';
-
-    // Show the burger menu
-    const burgerMenu = document.querySelector('.burger-menu');
-    if (burgerMenu) {
-        burgerMenu.style.display = 'block'; // Or 'flex', depending on its original display type
+    
+    // Show back arrow when lightbox is closed
+    const backArrow = document.querySelector('.back-arrow');
+    if (backArrow) {
+        backArrow.style.pointerEvents = 'auto';
+        backArrow.style.opacity = '1';
     }
 }
 

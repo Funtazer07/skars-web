@@ -82,6 +82,7 @@ body {
   text-decoration: none;
   font-family: var(--title-font);
   transition: transform 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .back-arrow:hover {
@@ -278,7 +279,7 @@ body {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
