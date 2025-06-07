@@ -12,7 +12,13 @@ const transporter = nodemailer.createTransport({
 });
 
 router.post('/contact', async (req, res) => {
-  const { name, email, phone, details } = req.body;
+  const { website, email_confirm, name_confirm, name, email, phone, details } = req.body;
+
+  // Check if any honeypot fields are filled
+  if (website || email_confirm || name_confirm) {
+    // This is likely a bot submission
+    return res.redirect('/contact.html?status=error');
+  }
 
   try {
     // Email content
