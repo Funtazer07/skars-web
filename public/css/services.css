@@ -54,7 +54,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Contact Me Page Styles */
 .work-together,
 .what-you-get,
 .reviews-section,
@@ -173,6 +172,10 @@ body {
 
 .find-me-here li:nth-child(3) a::before {
   background-image: url('../media/instagram-icon.svg');
+}
+
+.find-me-here li a:hover {
+  color: #666;
 }
 
 section.reviews {
@@ -351,16 +354,14 @@ section.reviews {
   color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: center;
-  position: relative;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
   width: 100%;
-  padding: 20px 0;
-  margin: 0 auto 20px auto;
+  margin-bottom: 20px;
 }
 
 .find-me-here .marker-bg,

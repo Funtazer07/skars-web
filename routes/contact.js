@@ -25,6 +25,7 @@ router.post('/contact', async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: 'vassil@skarsphotography.com', 
+      // replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `
         Name: ${name}
@@ -34,7 +35,6 @@ router.post('/contact', async (req, res) => {
       `
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
     
     // Redirect back to the contact page with success status

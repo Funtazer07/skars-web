@@ -54,7 +54,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Portfolio Styles */
 section.portfolio {
   margin-block: 20px;
   background-color: transparent;
@@ -68,7 +67,7 @@ section.portfolio {
   color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: contain;
   background-position: center;
   text-align: center;
   width: 45vw;
@@ -171,7 +170,6 @@ section.portfolio {
   transform: translateX(-50%) scale(1.1);
 }
 
-/* Reviews Section */
 .reviews > img {
   position: relative;
   width: 100%;

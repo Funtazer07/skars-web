@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/services.css">
   <script src="js/slider.js" defer></script>
+  <script src="js/burger.js" defer></script>
 </head>
 <body>
   <header>
@@ -156,7 +157,6 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About Me</a></li>
       <li><a href="contact.html">Contact Me</a></li>
-      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <ul>
       <li id="bold-title">Legal</li>
@@ -165,17 +165,5 @@
     </ul>
     <img src="media/skars_logo.png" alt="footer-logo" id="footer-logo">
   </footer>
-  <script src="js/burger.js" defer></script>
-  <script>
-    // Check URL parameters for form submission status
-    const urlParams = new URLSearchParams(window.location.search);
-    const status = urlParams.get('status');
-    
-    if (status === 'success') {
-      alert('Thank you for your message! I will get back to you soon.');
-    } else if (status === 'error') {
-      alert('Sorry, there was an error sending your message. Please try again.');
-    }
-  </script>
 </body>
 </html> 

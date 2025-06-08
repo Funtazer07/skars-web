@@ -54,7 +54,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Page Title Section */
 .page-title {
   margin-top: 20px;
   margin-bottom: 40px;
@@ -76,7 +75,7 @@ body {
 
 .back-arrow {
   position: absolute;
-  left: -80px; 
+  left: -101px;
   font-size: var(--title-size);
   color: var(--white);
   text-decoration: none;
@@ -95,7 +94,7 @@ body {
   color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: center;
   padding: 20px 0;
   display: flex;
@@ -462,7 +461,7 @@ body {
   }
 
   .back-arrow {
-    left: -30px;
+    left: -15px;
     font-size: 1.5em;
   }
 

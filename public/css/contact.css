@@ -54,10 +54,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Contact Section Styles */
 .contact-me-section {
   padding: 40px 0;
-  min-height: calc(100vh - 200px); /* Account for header and footer */
+  min-height: calc(100vh - 200px);
   display: flex;
   align-items: center;
 }
@@ -81,7 +80,7 @@ body {
   color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: center;
   padding: 20px 0;
   display: flex;
@@ -171,9 +170,9 @@ body {
 .form-sec button {
   background-image: url('../media/buttons-bg.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
   border: none;
-  padding: 10px 50px;
+  padding: 20px 38px;
   cursor: pointer;
   background-color: transparent;
   transition: scale 0.3s ease-in-out;
@@ -182,6 +181,7 @@ body {
   color: var(--black);
   align-self: flex-start;
   margin-top: 10px;
+  white-space: nowrap;
 }
 
 .form-sec button:hover {
@@ -205,6 +205,8 @@ body {
   .form-sec button {
     width: 100%;
     text-align: center;
+    font-size: 1.5em;
+    padding: 60px 20px;
   }
 }
 
@@ -219,5 +221,17 @@ body {
 
   .find-me-here li a {
     font-size: 1em;
+  }
+
+  .form-sec button {
+    font-size: 1.3em;
+    padding: 27px 19px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .form-sec button {
+    font-size: 1.1em;
+    padding: 6px 12px;
   }
 }

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/contact.css">
+  <script src="js/burger.js" defer></script>
 </head>
 <body>
   <header>
@@ -28,14 +29,13 @@
   <section class="contact-me-section">
     <div class="contact-content">
       <article class="find-me-here">
-        <div class="marker-bg">FIND ME HERE:</div>
+        <div class="marker-bg">FIND ME HERE</div>
         <ul>
           <li><a href="tel:+31629527277">+31 629 527 277</a></li>
           <li><a href="mailto:vassil@skarsphotography.com">vassil@skarsphotography.com</a></li>
           <li><a href="https://www.instagram.com/skars_events/" target="_blank" rel="noopener noreferrer">@skars_ph</a></li>
         </ul>
         <form action="/api/contact" class="form-sec" method="post">
-          <!-- Honeypot fields -->
           <div style="display: none;">
             <input type="text" name="website" tabindex="-1" autocomplete="off">
             <input type="email" name="email_confirm" tabindex="-1" autocomplete="off">
@@ -43,11 +43,11 @@
           </div>
           <label>
             Name:
-            <input type="text" name="name" placeholder="John Doe" required>
+            <input type="text" name="name" placeholder="John Snow" required>
           </label>
           <label>
             Email:
-            <input type="email" name="email" placeholder="john@example.com" required>
+            <input type="email" name="email" placeholder="king@winterfell.com" required>
           </label>
           <label>
             Phone:
@@ -76,7 +76,6 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About Me</a></li>
       <li><a href="contact.html">Contact Me</a></li>
-      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <ul>
       <li id="bold-title">Legal</li>
@@ -85,7 +84,6 @@
     </ul>
     <img src="media/skars_logo.png" alt="footer-logo" id="footer-logo">
   </footer>
-  <script src="js/burger.js" defer></script>
   <script>
     // Check URL parameters for form submission status
     const urlParams = new URLSearchParams(window.location.search);
