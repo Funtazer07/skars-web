@@ -461,14 +461,14 @@ body {
   }
 
   .back-arrow {
-    left: -50px;
+    left: -20px;
     font-size: 1.5em;
   }
 
   .page-title .marker-bg {
     font-size: 1.8em;
     padding: 5px 15px;
-    background-size: 150%;
+    /* background-size: 150%; */
   }
 
   .content-container {
