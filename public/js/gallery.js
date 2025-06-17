@@ -92,6 +92,7 @@ async function loadGallery(page) {
 
         const photos = await response.json();
         console.log('Received photos:', photos);
+        console.log('Photo filenames in order:', photos.map(p => p.filename));
 
         if (!Array.isArray(photos)) {
             throw new Error('Invalid response format from server');
@@ -146,6 +147,7 @@ function renderGallery(photos, page) {
         img.loading = 'lazy';
         img.dataset.index = index;
         img.dataset.fullsize = photo.url; // Store the original URL
+        img.dataset.filename = photo.filename; // Store the filename for debugging
                 
         // Add loading state
         img.addEventListener('load', () => {

@@ -29,7 +29,7 @@ router.get('/photos/:category', async (req, res) => {
         
         const result = await cloudinary.search
             .expression(searchExpression)
-            .sort_by('created_at', 'desc')
+            .sort_by('public_id', 'asc')
             .max_results(100)
             .execute();
 

@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const oldSlideWidth = slideWidth;
     slideWidth = slider.offsetWidth;
     
-    // Adjust current position based on new slide width
     if (oldSlideWidth !== slideWidth) {
       const slideIndex = Math.abs(Math.round(currentPosition / oldSlideWidth));
       currentPosition = -(slideWidth * slideIndex);

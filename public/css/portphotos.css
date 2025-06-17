@@ -75,7 +75,7 @@ body {
 
 .back-arrow {
   position: absolute;
-  left: -101px;
+  left: -150px;
   font-size: var(--title-size);
   color: var(--white);
   text-decoration: none;
@@ -461,13 +461,14 @@ body {
   }
 
   .back-arrow {
-    left: -15px;
+    left: -50px;
     font-size: 1.5em;
   }
 
   .page-title .marker-bg {
     font-size: 1.8em;
     padding: 5px 15px;
+    background-size: 150%;
   }
 
   .content-container {

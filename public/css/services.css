@@ -352,6 +352,22 @@ section.reviews {
   font-family: var(--title-font);
   font-size: var(--title-size);
   color: var(--black);
+  background-image: url('../media/contact-marker-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 35px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.reviews .marker-bg {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
   background-image: url('../media/reviews-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -370,7 +386,7 @@ section.reviews {
   width: auto;
   height: auto;
   text-align: center;
-  background-image: url('../media/reviews-bg.png');
+  background-image: url('../media/contact-marker-bg.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 10px 30px;

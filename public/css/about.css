@@ -362,6 +362,27 @@ section.reviews {
   margin-bottom: 20px;
 }
 
+.like-what-text .marker-bg {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  color: var(--black);
+  background-image: url('../media/contact-marker-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 28px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  transition: scale 0.3s ease-in-out;
+}
+
+.like-what-text .marker-bg:hover {
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
 
 
 .slider-button:hover {
